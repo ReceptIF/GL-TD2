@@ -80,6 +80,36 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/Users/Olivice/Documents/IF/ReceptIF/GrammaireLangage/GL-TD2/Automate.cpp">
+			<Option target="GL_TD2"/>
+		</Unit>
+		<Unit filename="/Users/Olivice/Documents/IF/ReceptIF/GrammaireLangage/GL-TD2/Automate.h">
+			<Option target="GL_TD2"/>
+		</Unit>
+		<Unit filename="/Users/Olivice/Documents/IF/ReceptIF/GrammaireLangage/GL-TD2/Etat.cpp">
+			<Option target="GL_TD2"/>
+		</Unit>
+		<Unit filename="/Users/Olivice/Documents/IF/ReceptIF/GrammaireLangage/GL-TD2/Etat.h">
+			<Option target="GL_TD2"/>
+		</Unit>
+		<Unit filename="/Users/Olivice/Documents/IF/ReceptIF/GrammaireLangage/GL-TD2/Expr.cpp">
+			<Option target="GL_TD2"/>
+		</Unit>
+		<Unit filename="/Users/Olivice/Documents/IF/ReceptIF/GrammaireLangage/GL-TD2/Expr.h">
+			<Option target="GL_TD2"/>
+		</Unit>
+		<Unit filename="/Users/Olivice/Documents/IF/ReceptIF/GrammaireLangage/GL-TD2/Lexer.cpp">
+			<Option target="GL_TD2"/>
+		</Unit>
+		<Unit filename="/Users/Olivice/Documents/IF/ReceptIF/GrammaireLangage/GL-TD2/Lexer.h">
+			<Option target="GL_TD2"/>
+		</Unit>
+		<Unit filename="/Users/Olivice/Documents/IF/ReceptIF/GrammaireLangage/GL-TD2/Symbole.cpp">
+			<Option target="GL_TD2"/>
+		</Unit>
+		<Unit filename="/Users/Olivice/Documents/IF/ReceptIF/GrammaireLangage/GL-TD2/Symbole.h">
+			<Option target="GL_TD2"/>
+		</Unit>
 		<Unit filename="/Users/Olivice/Documents/IF/ReceptIF/GrammaireLangage/GL-TD2/main.cpp">
 			<Option target="GL_TD2"/>
 		</Unit>
