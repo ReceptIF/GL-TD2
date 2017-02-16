@@ -1,5 +1,5 @@
-EXE: main.o Automate.o Etat.o Expr.o Lexer.o Symbole.o Mult.o OuvrePar.o
-	g++ -o EXE main.o Automate.o Etat.o Expr.o Lexer.o Symbole.o Mult.o
+RECEPTCOMP.exe: main.o Automate.o Etat.o Expr.o Lexer.o Symbole.o Mult.o Plus.o FermePar.o OuvrePar.o
+	g++ -o RECEPTCOMP.exe main.o Automate.o Etat.o Expr.o Lexer.o Symbole.o Mult.o Plus.o FermePar.o OuvrePar.o
 
 main.o: main.cpp
 	g++ -c main.cpp
@@ -19,8 +19,14 @@ Lexer.o: Lexer.cpp Lexer.h
 Symbole.o: Symbole.cpp Symbole.h
 	g++ -c Symbole.cpp
 
-Mult.o: Mult.cpp Mult.h
+Mult.o: Mult.cpp Mult.h Symbole.h
 	g++ -c Mult.cpp
 
-OuvrePar.o: OuvrePar.cpp OuvrePar.h
+Plus.o: Plus.cpp Plus.h Symbole.h
+	g++ -c Plus.cpp
+
+FermePar.o: FermePar.cpp FermePar.h Symbole.h
+	g++ -c FermePar.cpp
+
+OuvrePar.o: OuvrePar.cpp OuvrePar.h Symbole.h
 	g++ -c OuvrePar.cpp
