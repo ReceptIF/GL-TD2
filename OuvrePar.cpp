@@ -3,10 +3,3 @@
 //
 
 #include "OuvrePar.h"
-
-double OuvrePar::eval(const map<string, double> & valeurs)
-{
-  
-  return -1;
-  
-}

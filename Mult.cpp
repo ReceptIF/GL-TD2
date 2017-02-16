@@ -3,10 +3,3 @@
 //
 
 #include "Mult.h"
-
-double Mult::eval(const map<string, double> & valeurs)
-{
-  
-  return -1;
-  
-}

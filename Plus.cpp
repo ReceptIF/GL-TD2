@@ -3,10 +3,3 @@
 //
 
 #include "Plus.h"
-
-double Plus::eval(const map<string, double> & valeurs)
-{
-  
-  return -1;
-  
-}

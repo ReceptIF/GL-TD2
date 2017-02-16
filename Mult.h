@@ -17,7 +17,6 @@ class Mult : public Symbole {
     public:
         Mult():Symbole('*') {}
         ~Mult() {}
-        double eval(const map<string, double> & valeurs);
 };
 
 

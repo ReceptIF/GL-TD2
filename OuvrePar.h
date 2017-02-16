@@ -17,7 +17,6 @@ class OuvrePar : public Symbole {
     public:
         OuvrePar():Symbole('(') {}
         ~OuvrePar() {}
-        double eval(const map<string, double> & valeurs);
 };
 
 

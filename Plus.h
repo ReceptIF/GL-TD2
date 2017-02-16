@@ -17,7 +17,6 @@ class Plus : public Symbole {
     public:
         Plus():Symbole('+') {}
         ~Plus() {}
-        double eval(const map<string, double> & valeurs);
 };
 
 

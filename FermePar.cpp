@@ -3,10 +3,3 @@
 //
 
 #include "FermePar.h"
-
-double FermePar::eval(const map<string, double> & valeurs)
-{
-  
-  return -1;
-  
-}

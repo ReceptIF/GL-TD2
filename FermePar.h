@@ -17,7 +17,6 @@ class FermePar : public Symbole {
     public:
         FermePar():Symbole(')') {}
         ~FermePar() {}
-        double eval(const map<string, double> & valeurs);
 };
 
 
