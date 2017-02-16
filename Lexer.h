@@ -6,11 +6,18 @@
 #define GL_TD2_LEXER_H
 
 #include "Symbole.h"
+#include <string>
+
+using namespace std;
 
 class Lexer {
+  protected:
+    string chaine;
 
   public:
+    Lexer();
     void putSymbol(Symbole * s);
+    Symbole getNext(bool eat = false);
 
 };
 

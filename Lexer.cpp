@@ -3,9 +3,20 @@
 //
 
 #include "Lexer.h"
+#include <iostream>
+
+Lexer::Lexer() {
+  chaine = "1+2";
+}
 
 void Lexer::putSymbol(Symbole * s) {
   
   //TODO: this.
   
+}
+
+Symbole Lexer::getNext(bool eat) {
+  char currentChar = chaine[0];
+  
+  cout << currentChar << endl;
 }
