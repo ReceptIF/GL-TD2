@@ -1,4 +1,4 @@
-EXE: main.o Automate.o Etat.o Expr.o Lexer.o Symbole.o Mult.o
+EXE: main.o Automate.o Etat.o Expr.o Lexer.o Symbole.o Mult.o OuvrePar.o
 	g++ -o EXE main.o Automate.o Etat.o Expr.o Lexer.o Symbole.o Mult.o
 
 main.o: main.cpp
@@ -21,3 +21,6 @@ Symbole.o: Symbole.cpp Symbole.h
 
 Mult.o: Mult.cpp Mult.h
 	g++ -c Mult.cpp
+
+OuvrePar.o: OuvrePar.cpp OuvrePar.h
+	g++ -c OuvrePar.cpp
