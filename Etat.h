@@ -9,9 +9,9 @@
 #include <string>
 
 #include "Symbole.h"
-#include "Automate.h"
 
 using namespace std;
+class Automate;
 
 class Etat {
     public:

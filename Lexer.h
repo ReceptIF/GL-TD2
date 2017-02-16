@@ -5,8 +5,12 @@
 #ifndef GL_TD2_LEXER_H
 #define GL_TD2_LEXER_H
 
+#include "Symbole.h"
 
 class Lexer {
+
+  public:
+    void putSymbol(Symbole * s);
 
 };
 

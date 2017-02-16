@@ -4,16 +4,16 @@ RECEPTCOMP.exe: main.o Automate.o Etat.o Expr.o Lexer.o Symbole.o Mult.o Plus.o 
 main.o: main.cpp
 	g++ -c main.cpp
 
-Automate.o: Automate.h Automate.cpp
+Automate.o: Automate.h Automate.cpp Symbole.h Etat.h Lexer.h
 	g++ -c Automate.cpp
 
-Etat.o: Etat.cpp Etat.h Symbole.h Automate.h
+Etat.o: Etat.cpp Etat.h Symbole.h
 	g++ -c Etat.cpp
 
 Expr.o: Expr.cpp Expr.h Symbole.h
 	g++ -c Expr.cpp
 
-Lexer.o: Lexer.cpp Lexer.h 
+Lexer.o: Lexer.cpp Lexer.h Symbole.h
 	g++ -c Lexer.cpp
 
 Symbole.o: Symbole.cpp Symbole.h

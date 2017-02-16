@@ -3,3 +3,9 @@
 //
 
 #include "Lexer.h"
+
+void Lexer::putSymbol(Symbole * s) {
+  
+  //TODO: this.
+  
+}
