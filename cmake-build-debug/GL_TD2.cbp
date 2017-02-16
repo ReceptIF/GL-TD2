@@ -86,6 +86,66 @@
 		<Unit filename="/Users/Olivice/Documents/IF/ReceptIF/GrammaireLangage/GL-TD2/Automate.h">
 			<Option target="GL_TD2"/>
 		</Unit>
+		<Unit filename="/Users/Olivice/Documents/IF/ReceptIF/GrammaireLangage/GL-TD2/E0.cpp">
+			<Option target="GL_TD2"/>
+		</Unit>
+		<Unit filename="/Users/Olivice/Documents/IF/ReceptIF/GrammaireLangage/GL-TD2/E0.h">
+			<Option target="GL_TD2"/>
+		</Unit>
+		<Unit filename="/Users/Olivice/Documents/IF/ReceptIF/GrammaireLangage/GL-TD2/E1.cpp">
+			<Option target="GL_TD2"/>
+		</Unit>
+		<Unit filename="/Users/Olivice/Documents/IF/ReceptIF/GrammaireLangage/GL-TD2/E1.h">
+			<Option target="GL_TD2"/>
+		</Unit>
+		<Unit filename="/Users/Olivice/Documents/IF/ReceptIF/GrammaireLangage/GL-TD2/E2.cpp">
+			<Option target="GL_TD2"/>
+		</Unit>
+		<Unit filename="/Users/Olivice/Documents/IF/ReceptIF/GrammaireLangage/GL-TD2/E2.h">
+			<Option target="GL_TD2"/>
+		</Unit>
+		<Unit filename="/Users/Olivice/Documents/IF/ReceptIF/GrammaireLangage/GL-TD2/E3.cpp">
+			<Option target="GL_TD2"/>
+		</Unit>
+		<Unit filename="/Users/Olivice/Documents/IF/ReceptIF/GrammaireLangage/GL-TD2/E3.h">
+			<Option target="GL_TD2"/>
+		</Unit>
+		<Unit filename="/Users/Olivice/Documents/IF/ReceptIF/GrammaireLangage/GL-TD2/E4.cpp">
+			<Option target="GL_TD2"/>
+		</Unit>
+		<Unit filename="/Users/Olivice/Documents/IF/ReceptIF/GrammaireLangage/GL-TD2/E4.h">
+			<Option target="GL_TD2"/>
+		</Unit>
+		<Unit filename="/Users/Olivice/Documents/IF/ReceptIF/GrammaireLangage/GL-TD2/E5.cpp">
+			<Option target="GL_TD2"/>
+		</Unit>
+		<Unit filename="/Users/Olivice/Documents/IF/ReceptIF/GrammaireLangage/GL-TD2/E5.h">
+			<Option target="GL_TD2"/>
+		</Unit>
+		<Unit filename="/Users/Olivice/Documents/IF/ReceptIF/GrammaireLangage/GL-TD2/E6.cpp">
+			<Option target="GL_TD2"/>
+		</Unit>
+		<Unit filename="/Users/Olivice/Documents/IF/ReceptIF/GrammaireLangage/GL-TD2/E6.h">
+			<Option target="GL_TD2"/>
+		</Unit>
+		<Unit filename="/Users/Olivice/Documents/IF/ReceptIF/GrammaireLangage/GL-TD2/E7.cpp">
+			<Option target="GL_TD2"/>
+		</Unit>
+		<Unit filename="/Users/Olivice/Documents/IF/ReceptIF/GrammaireLangage/GL-TD2/E7.h">
+			<Option target="GL_TD2"/>
+		</Unit>
+		<Unit filename="/Users/Olivice/Documents/IF/ReceptIF/GrammaireLangage/GL-TD2/E8.cpp">
+			<Option target="GL_TD2"/>
+		</Unit>
+		<Unit filename="/Users/Olivice/Documents/IF/ReceptIF/GrammaireLangage/GL-TD2/E8.h">
+			<Option target="GL_TD2"/>
+		</Unit>
+		<Unit filename="/Users/Olivice/Documents/IF/ReceptIF/GrammaireLangage/GL-TD2/E9.cpp">
+			<Option target="GL_TD2"/>
+		</Unit>
+		<Unit filename="/Users/Olivice/Documents/IF/ReceptIF/GrammaireLangage/GL-TD2/E9.h">
+			<Option target="GL_TD2"/>
+		</Unit>
 		<Unit filename="/Users/Olivice/Documents/IF/ReceptIF/GrammaireLangage/GL-TD2/Etat.cpp">
 			<Option target="GL_TD2"/>
 		</Unit>
