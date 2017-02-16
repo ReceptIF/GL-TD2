@@ -15,7 +15,7 @@ using namespace std;
 
 class FermePar : public Symbole {
     public:
-        FermePar():Symbole(')') {}
+        FermePar():Symbole(FERMEPAR) {}
         ~FermePar() {}
 };
 

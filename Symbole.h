@@ -5,6 +5,8 @@
 #ifndef GL_TD2_SYMBOLE_H
 #define GL_TD2_SYMBOLE_H
 
+enum SYMBOLE { PLUS, MULT, FERMEPAR, OUVREPAR, NOMBRE, VARIABLE, EXPR };
+
 
 class Symbole {
     protected:

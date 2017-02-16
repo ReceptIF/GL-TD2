@@ -15,7 +15,7 @@ using namespace std;
 
 class Mult : public Symbole {
     public:
-        Mult():Symbole('*') {}
+        Mult():Symbole(MULT) {}
         ~Mult() {}
 };
 

@@ -10,6 +10,7 @@
 #include "Mult.h"
 #include "OuvrePar.h"
 #include "FermePar.h"
+#include "Nombre.h"
 #include <string>
 
 using namespace std;

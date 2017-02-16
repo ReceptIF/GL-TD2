@@ -15,7 +15,7 @@ using namespace std;
 
 class Plus : public Symbole {
     public:
-        Plus():Symbole('+') {}
+        Plus():Symbole(PLUS) {}
         ~Plus() {}
 };
 

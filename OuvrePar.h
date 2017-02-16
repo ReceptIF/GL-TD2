@@ -15,7 +15,7 @@ using namespace std;
 
 class OuvrePar : public Symbole {
     public:
-        OuvrePar():Symbole('(') {}
+        OuvrePar():Symbole(OUVREPAR) {}
         ~OuvrePar() {}
 };
 
