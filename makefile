@@ -1,5 +1,5 @@
-EXE: main.o Automate.o Etat.o Expr.o Lexer.o Symbole.o
-	g++ -o EXE main.o Automate.o Etat.o Expr.o Lexer.o Symbole.o
+EXE: main.o Automate.o Etat.o Expr.o Lexer.o Symbole.o Mult.o
+	g++ -o EXE main.o Automate.o Etat.o Expr.o Lexer.o Symbole.o Mult.o
 
 main.o: main.cpp
 	g++ -c main.cpp
@@ -18,3 +18,6 @@ Lexer.o: Lexer.cpp Lexer.h
 
 Symbole.o: Symbole.cpp Symbole.h
 	g++ -c Symbole.cpp
+
+Mult.o: Mult.cpp Mult.h
+	g++ -c Mult.cpp
