@@ -6,7 +6,7 @@
 #include <iostream>
 
 Lexer::Lexer() {
-  chaine = "+2";
+  chaine = ")2";
 }
 
 void Lexer::putSymbol(Symbole * s) {
@@ -22,6 +22,16 @@ Symbole Lexer::getNext(bool eat) {
   switch(currentChar) {
     case '+':
       symbole = new Plus();
+      break;
+    case '*':
+      symbole = new Mult();
+      break;
+    case '(':
+      symbole = new OuvrePar();
+      break;
+    case ')':
+      symbole = new FermePar();
+      break;
   }
   
   char c = *symbole;

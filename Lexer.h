@@ -7,6 +7,9 @@
 
 #include "Symbole.h"
 #include "Plus.h"
+#include "Mult.h"
+#include "OuvrePar.h"
+#include "FermePar.h"
 #include <string>
 
 using namespace std;
