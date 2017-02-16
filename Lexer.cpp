@@ -6,7 +6,7 @@
 #include <iostream>
 
 Lexer::Lexer() {
-  chaine = "1+2";
+  chaine = "+2";
 }
 
 void Lexer::putSymbol(Symbole * s) {
@@ -17,6 +17,14 @@ void Lexer::putSymbol(Symbole * s) {
 
 Symbole Lexer::getNext(bool eat) {
   char currentChar = chaine[0];
+  Symbole *symbole;
   
-  cout << currentChar << endl;
+  switch(currentChar) {
+    case '+':
+      symbole = new Plus();
+  }
+  
+  char c = *symbole;
+  cout << c << endl;
+  return *symbole;
 }

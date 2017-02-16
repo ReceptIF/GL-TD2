@@ -6,6 +6,7 @@
 #define GL_TD2_LEXER_H
 
 #include "Symbole.h"
+#include "Plus.h"
 #include <string>
 
 using namespace std;
