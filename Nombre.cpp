@@ -12,5 +12,5 @@ double Nombre::eval(const map<string, double> &valeurs) {
 }
 
 void Nombre::print() {
-    cout << valeur;
+    cout << valeur << " ";
 }

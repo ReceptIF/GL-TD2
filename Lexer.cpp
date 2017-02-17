@@ -11,15 +11,15 @@ Lexer::Lexer() : chaine(""), index(0) {
 Lexer::Lexer(string s) : chaine(s), index(0) {
 }
 
-Symbole Lexer::getNext() {
+Symbole * Lexer::getNext() {
     return read(true);
 }
 
-Symbole Lexer::lookNext() {
+Symbole * Lexer::lookNext() {
     return read(false);
 }
 
-Symbole Lexer::read(bool eat) {
+Symbole * Lexer::read(bool eat) {
     int i = index;
     char currentChar = chaine[i];
     Symbole *symbole;
@@ -27,7 +27,12 @@ Symbole Lexer::read(bool eat) {
     bool ok = false;
 
     while (!ok) {
-        if (currentChar == '+') {
+        currentChar = chaine[i];
+
+        if (i >= chaine.size()) {
+            symbole = new EndOfFile();
+            ok = true;
+        } else if(currentChar == '+') {
             symbole = new Plus();
             i++;
             ok = true;
@@ -65,5 +70,5 @@ Symbole Lexer::read(bool eat) {
 
     index = eat ? i : index;
 
-    return *symbole;
+    return symbole;
 }

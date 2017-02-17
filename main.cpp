@@ -4,14 +4,14 @@
 using namespace std;
 
 int main() {
-    std::cout << "Hello, World!" << std::endl;
+    Lexer lexer("(1+4)+ (451616 * 5 + 784848)");
 
-    Lexer lexer("1+12+4");
-
-    for (int i = 0; i < 6; i++) {
-        Symbole s = lexer.getNext();
-        s.print();
+    Symbole *s = lexer.getNext();
+    while (s->getIdent() != ENDOFFILE) {
+        s->print();
+        s = lexer.getNext();
     }
+    s->print();
 
     return 0;
 }

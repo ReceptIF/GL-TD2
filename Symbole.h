@@ -4,7 +4,7 @@
 #include <iostream>
 
 enum SYMBOLE {
-    PLUS, MULT, FERMEPAR, OUVREPAR, NOMBRE, EXPR, ENDOFFILE
+    PLUS = 0, MULT = 1, FERMEPAR = 2, OUVREPAR = 3, NOMBRE = 4, EXPR = 5, ENDOFFILE = 6
 };
 
 
@@ -13,6 +13,8 @@ protected:
     int ident;
 public:
     Symbole(int id) : ident(id) {}
+
+    int getIdent();
 
     virtual ~Symbole() {}
 

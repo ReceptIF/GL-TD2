@@ -7,6 +7,7 @@
 #include "OuvrePar.h"
 #include "FermePar.h"
 #include "Nombre.h"
+#include "EndOfFile.h"
 #include <string>
 
 class Lexer {
@@ -15,14 +16,14 @@ private:
     std::string chaine;
     int index;
 
-    Symbole read(bool eat = false);
+    Symbole * read(bool eat = false);
 
 public:
     Lexer();
     Lexer(std::string s);
 
-    Symbole getNext();
-    Symbole lookNext();
+    Symbole * getNext();
+    Symbole * lookNext();
 };
 
 
