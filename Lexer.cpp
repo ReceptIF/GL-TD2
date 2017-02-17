@@ -7,41 +7,48 @@
 #include <stdlib.h>
 
 Lexer::Lexer() {
-  chaine = "+2";
-}
-
-void Lexer::putSymbol(Symbole * s) {
-  
-  //TODO: this.
-  
+  chaine = "8";
 }
 
 Symbole Lexer::getNext(bool eat) {
   char currentChar = chaine[0];
+  int nbCharLus = 0;
   Symbole *symbole;
   
   if(currentChar == '+') 
   {
     symbole = new Plus();
+    nbCharLus++;
   }
   else if(currentChar == '*')
   {
     symbole = new Mult();
+    nbCharLus++;
   }
   else if(currentChar == '(')
   {
     symbole = new OuvrePar();
+    nbCharLus++;
   }
   else if(currentChar == ')')
   {
     symbole = new FermePar();
+    nbCharLus++;
   }
   else if(currentChar >= 48 && currentChar <= 58)
   {
     symbole = new Nombre(atoi(&currentChar));
+    nbCharLus++;
+  }
+  else if(currentChar == '\0')
+  {
+    symbole = new FinDeTexte();
   }
   
-  char c = *symbole;
-  cout << c << endl;
+  if(eat) {
+    chaine = chaine.substr(nbCharLus);
+  }
+  
+  cout << symbole->avoirJeton() << endl;
   return *symbole;
 }

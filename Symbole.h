@@ -5,7 +5,7 @@
 #ifndef GL_TD2_SYMBOLE_H
 #define GL_TD2_SYMBOLE_H
 
-enum SYMBOLE { PLUS, MULT, FERMEPAR, OUVREPAR, NOMBRE, VARIABLE, EXPR };
+enum SYMBOLE { PLUS, MULT, FERMEPAR, OUVREPAR, NOMBRE, VARIABLE, EXPR, FINDETEXTE };
 
 
 class Symbole {
@@ -15,6 +15,7 @@ class Symbole {
         Symbole(int id) : ident(id) {}
         virtual ~Symbole() {}
         void print();
+        int avoirJeton();
         operator int() const { return ident; }
 };
 

@@ -3,3 +3,7 @@
 //
 
 #include "Symbole.h"
+
+int Symbole::avoirJeton() {
+  return ident;
+}

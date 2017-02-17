@@ -11,6 +11,7 @@
 #include "OuvrePar.h"
 #include "FermePar.h"
 #include "Nombre.h"
+#include "FinDeTexte.h"
 #include <string>
 
 using namespace std;
@@ -21,7 +22,6 @@ class Lexer {
 
   public:
     Lexer();
-    void putSymbol(Symbole * s);
     Symbole getNext(bool eat = false);
 
 };
