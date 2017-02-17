@@ -4,7 +4,8 @@
 
 #include "Symbole.h"
 
-class EOF : Symbole {
+class EOF : public Symbole {
+public:
     EOF() : Symbole(FERMEPAR) {}
 
     ~EOF() {}

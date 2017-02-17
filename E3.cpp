@@ -1,4 +1,6 @@
 #include "E3.h"
+#include "Expr.h"
+#include "Automate.h"
 
 E3::E3(const string name) : Etat(name) {
 

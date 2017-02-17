@@ -1,4 +1,6 @@
 #include "E8.h"
+#include "Expr.h"
+#include "Automate.h"
 
 E8::E8(const string name) : Etat(name) {
 

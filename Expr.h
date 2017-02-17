@@ -18,7 +18,7 @@ public:
     Expr() : Symbole(EXPR) {}
     virtual ~Expr() {}
 
-    virtual double eval(const map<string, double> &valeurs) = 0;
+    virtual double eval(const map<string, double> &valeurs) {return 0;};
 };
 
 

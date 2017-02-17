@@ -1,4 +1,7 @@
 #include "E7.h"
+#include "Expr.h"
+#include "E5.h"
+#include "Automate.h"
 
 E7::E7(const string name) : Etat(name) {
 
@@ -19,7 +22,7 @@ bool E7::transition(Automate &automate, Symbole *s) {
             automate.reduction(7, new Expr());
             break;
         case MULT :
-            automate.decalage(s, new E5);
+            automate.decalage(s, new E5("Etat 5"));
             break;
         case OUVREPAR :
         case FERMEPAR :

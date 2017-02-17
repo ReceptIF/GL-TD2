@@ -4,7 +4,8 @@
 
 #include "Etat.h"
 
-class E3 : Etat {
+class E3 : public Etat {
+public:
     E3(string name);
 
     virtual ~E3();

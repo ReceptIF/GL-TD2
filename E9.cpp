@@ -1,4 +1,6 @@
 #include "E9.h"
+#include "Expr.h"
+#include "Automate.h"
 
 E9::E9(const string name) : Etat(name) {
 
