@@ -14,6 +14,7 @@ using namespace std;
 
 class Automate {
   protected :
+  	bool eat;
     vector<Symbole *> symbolstack;
     vector<Etat *> statestack;
    // Lexer *lexer;

@@ -16,6 +16,7 @@ class Automate;
 class Etat {
     public:
         Etat(string name);
+        string getName(){return name;}
         virtual ~Etat();
         virtual void print() const;
         virtual bool transition(Automate * automate,Symbole * s)=0;

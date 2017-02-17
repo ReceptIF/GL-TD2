@@ -17,6 +17,9 @@ string Lexer::getChaine() {
 }
 
 Symbole Lexer::getNext(bool eat) {
+  if(!eat) {
+    chaine = previousChaine;
+  }
   int index = 0;
   char currentChar = chaine[index];
   Symbole *symbole;
@@ -68,6 +71,7 @@ Symbole Lexer::getNext(bool eat) {
     cout << val << endl;
   }
   if(eat && currentChar!='\0') {
+    previousChaine = chaine;
     chaine = chaine.substr(index);
   }
   if(index == chaine.size()) {

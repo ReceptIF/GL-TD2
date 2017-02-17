@@ -15,20 +15,20 @@ void E9::print() const {
 bool E9::transition(Automate *automate, Symbole *s) {
 	switch(*s){
 		case PLUS:
-			cout << "Reduction de E9 vers E4" << endl;
-			//automate->decalage(s, new E2("E2"));
+			cout << "Réduction de E9" << endl;
+			automate->reduction(3, s);
 			break;
 		case MULT:
-			cout << "Reduction de E9 vers E4" << endl;
-			//automate->decalage(s, new E3("E3"));
+			cout << "Réduction de E9" << endl;
+			automate->reduction(3, s);
 			break;
 		case FERMEPAR:
-			cout << "Reduction de E9 vers E4" << endl;
-			//automate->decalage(s, new E1("E1"));
+			cout << "Réduction de E9" << endl;
+			automate->reduction(3, s);
 			break;
 		case EoF:
-			cout << "Reduction de E9 vers E4" << endl;
-			//automate->decalage(s, new E1("E1"));
+			cout << "Réduction de E9" << endl;
+			automate->reduction(3, s);
 			break;
 		default:
 			cout << "default" << endl;

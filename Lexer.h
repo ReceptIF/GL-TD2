@@ -19,9 +19,10 @@ using namespace std;
 class Lexer {
   protected:
     string chaine;
+    string previousChaine;
 
   public:
-    Lexer(string chaine){this->chaine = chaine;}
+    Lexer(string chaine){this->chaine = chaine; this->previousChaine = chaine;}
     string getChaine();
     void putSymbol(Symbole * s);
     Symbole getNext(bool eat = false);

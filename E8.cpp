@@ -15,20 +15,20 @@ void E8::print() const {
 bool E8::transition(Automate *automate, Symbole *s) {
 	switch(*s){
 		case PLUS:
-			cout << "Reduction de E8 vers E3" << endl;
-			//automate->decalage(s, new E2("E2"));
+			cout << "Réduction de E8" << endl;
+			automate->reduction(3, s);
 			break;
 		case MULT:
-			cout << "Reduction de E8 vers E3" << endl;
-			//automate->decalage(s, new E3("E3"));
+			cout << "Réduction de E8" << endl;
+			automate->reduction(3, s);
 			break;
 		case FERMEPAR:
-			cout << "Reduction de E8 vers E3" << endl;
-			//automate->decalage(s, new E1("E1"));
+			cout << "Réduction de E8" << endl;
+			automate->reduction(3, s);
 			break;
 		case EoF:
-			cout << "Reduction de E8 vers E3" << endl;
-			//automate->decalage(s, new E1("E1"));
+			cout << "Réduction de E8" << endl;
+			automate->reduction(3, s);
 			break;
 		default:
 			cout << "default" << endl;

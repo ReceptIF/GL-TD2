@@ -14,24 +14,24 @@ void E3::print() const {
 
 bool E3::transition(Automate *automate, Symbole *s) {
 	switch(*s){
+		case PLUS:
+			cout << "Réduction de E3" << endl;
+			automate->reduction(1, s);
+			break;
 		case MULT:
-			cout << "Réduction de E3 vers E5" << endl;
-			//automate->reduction(s, new E2("E2"));
+			cout << "Réduction de E3" << endl;
+			automate->reduction(1, s);
 			break;
-		case NOMBRE:
-			cout << "Réduction de E3 vers E5" << endl;
-			//automate->decalage(s, new E3("E3"));
-			break;
-		case EXPR:
-			cout << "Réduction de E3 vers E5" << endl;
-			//automate->decalage(s, new E1("E1"));
+		case FERMEPAR:
+			cout << "Réduction de E3" << endl;
+			automate->reduction(1, s);
 			break;
 		case EoF:
-			cout << "Réduction de E3 vers E5" << endl;
-			//automate->decalage(s, new E1("E1"));
+			cout << "Réduction de E3" << endl;
+			automate->reduction(1, s);
 			break;
 		default:
-			cout << "default" << endl;
+			cout << "default E3" << endl;
 			break;
 	}
     return false;
