@@ -16,11 +16,19 @@ bool E3::transition(Automate &automate, Symbole *s) {
     switch (*s) {
         case NOMBRE :
         case PLUS :
+            automate.reduction(s, new E5);
+            break;
         case MULT :
+            automate.reduction(s, new E5);
+            break;
         case OUVREPAR :
         case FERMEPAR :
+            automate.reduction(s, new E5);
+            break;
         case EXPR :
         case EOF :
+            automate.reduction(s, new E5);
+            break;
         default:
             break;
     }
