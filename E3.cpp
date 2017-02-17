@@ -1,7 +1,3 @@
-//
-// Created by Olivier VICENTE on 16/02/2017.
-//
-
 #include "E3.h"
 
 E3::E3(const string name) : Etat(name) {

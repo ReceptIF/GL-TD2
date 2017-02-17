@@ -1,7 +1,3 @@
-//
-// Created by Theo THIBAULT on 16/02/2017.
-//
-
 #ifndef GL_TD2_MULT_H
 #define GL_TD2_MULT_H
 
@@ -14,9 +10,10 @@
 using namespace std;
 
 class Mult : public Symbole {
-    public:
-        Mult():Symbole(MULT) {}
-        ~Mult() {}
+public:
+    Mult() : Symbole(MULT) {}
+
+    ~Mult() {}
 };
 
 

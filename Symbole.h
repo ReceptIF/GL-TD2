@@ -1,21 +1,22 @@
-//
-// Created by Olivier VICENTE on 14/02/2017.
-//
-
 #ifndef GL_TD2_SYMBOLE_H
 #define GL_TD2_SYMBOLE_H
 
-enum SYMBOLE { PLUS, MULT, FERMEPAR, OUVREPAR, NOMBRE, VARIABLE, EXPR };
+enum SYMBOLE {
+    PLUS, MULT, FERMEPAR, OUVREPAR, NOMBRE, VARIABLE, EXPR
+};
 
 
 class Symbole {
-    protected:
-        int ident;
-    public:
-        Symbole(int id) : ident(id) {}
-        virtual ~Symbole() {}
-        void print();
-        operator int() const { return ident; }
+protected:
+    int ident;
+public:
+    Symbole(int id) : ident(id) {}
+
+    virtual ~Symbole() {}
+
+    void print();
+
+    operator int() const { return ident; }
 };
 
 

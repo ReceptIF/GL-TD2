@@ -1,7 +1,3 @@
-//
-// Created by Olivier VICENTE on 14/02/2017.
-//
-
 #ifndef GL_TD2_AUTOMATE_H
 #define GL_TD2_AUTOMATE_H
 
@@ -13,16 +9,19 @@
 using namespace std;
 
 class Automate {
-  protected :
+protected :
     vector<Symbole *> symbolstack;
     vector<Etat *> statestack;
     Lexer *lexer;
-  
-  public:
+
+public:
     Automate();
+
     ~Automate();
-    void decalage(Symbole * s, Etat * e);
-    void reduction(int n, Symbole * s);
+
+    void decalage(Symbole *s, Etat *e);
+
+    void reduction(int n, Symbole *s);
 };
 
 

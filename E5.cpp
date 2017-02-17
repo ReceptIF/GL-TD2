@@ -1,7 +1,3 @@
-//
-// Created by Olivier VICENTE on 16/02/2017.
-//
-
 #include "E5.h"
 
 E5::E5(const string name) : Etat(name) {

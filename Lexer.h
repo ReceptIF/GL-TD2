@@ -1,7 +1,3 @@
-//
-// Created by Olivier VICENTE on 14/02/2017.
-//
-
 #ifndef GL_TD2_LEXER_H
 #define GL_TD2_LEXER_H
 
@@ -16,12 +12,12 @@
 using namespace std;
 
 class Lexer {
-  protected:
+protected:
     string chaine;
 
-  public:
+public:
     Lexer();
-    void putSymbol(Symbole * s);
+
     Symbole getNext(bool eat = false);
 
 };

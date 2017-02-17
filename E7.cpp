@@ -1,7 +1,3 @@
-//
-// Created by Olivier VICENTE on 16/02/2017.
-//
-
 #include "E7.h"
 
 E7::E7(const string name) : Etat(name) {

@@ -1,7 +1,3 @@
-//
-// Created by Olivier VICENTE on 16/02/2017.
-//
-
 #include "E4.h"
 
 E4::E4(const string name) : Etat(name) {

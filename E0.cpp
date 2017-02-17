@@ -1,7 +1,3 @@
-//
-// Created by Olivier VICENTE on 16/02/2017.
-//
-
 #include "E0.h"
 
 E0::E0(const string name) : Etat(name) {

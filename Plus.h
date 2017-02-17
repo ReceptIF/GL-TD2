@@ -1,7 +1,3 @@
-//
-// Created by Theo THIBAULT on 16/02/2017.
-//
-
 #ifndef GL_TD2_PLUS_H
 #define GL_TD2_PLUS_H
 
@@ -14,9 +10,10 @@
 using namespace std;
 
 class Plus : public Symbole {
-    public:
-        Plus():Symbole(PLUS) {}
-        ~Plus() {}
+public:
+    Plus() : Symbole(PLUS) {}
+
+    ~Plus() {}
 };
 
 

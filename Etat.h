@@ -11,17 +11,21 @@
 #include "Symbole.h"
 
 using namespace std;
+
 class Automate;
 
 class Etat {
-    public:
-        Etat(const string &name);
-        virtual ~Etat();
-        virtual void print() const;
-        virtual bool transition(Automate & automate,Symbole * s) = 0;
+public:
+    Etat(const string &name);
 
-    protected:
-            string name;
+    virtual ~Etat();
+
+    virtual void print() const;
+
+    virtual bool transition(Automate &automate, Symbole *s) = 0;
+
+protected:
+    string name;
 };
 
 
