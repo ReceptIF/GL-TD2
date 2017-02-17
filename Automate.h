@@ -16,11 +16,12 @@ class Automate {
   protected :
     vector<Symbole *> symbolstack;
     vector<Etat *> statestack;
-    Lexer *lexer;
+   // Lexer *lexer;
   
   public:
     Automate();
     ~Automate();
+    void lecture();
     void decalage(Symbole * s, Etat * e);
     void reduction(int n, Symbole * s);
 };

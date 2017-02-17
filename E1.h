@@ -7,13 +7,16 @@
 
 
 #include "Etat.h"
+#include "Automate.h"
+#include "E4.h"
+#include "E5.h"
 
 class E1 : public Etat {
 	public :
 	    E1(string name);
 	    virtual ~E1();
 	    virtual void print() const;
-	    virtual bool transition(Automate &automate, Symbole *s);
+	    virtual bool transition(Automate *automate, Symbole *s);
 };
 
 

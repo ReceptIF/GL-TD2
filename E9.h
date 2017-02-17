@@ -1,18 +1,18 @@
-//
-// Created by Olivier VICENTE on 16/02/2017.
-//
 
 #ifndef GL_TD2_E9_H
 #define GL_TD2_E9_H
 
 
 #include "Etat.h"
+#include "Automate.h"
+#include "E4.h"
 
-class E9 : Etat {
-    E9(string name);
-    virtual ~E9();
-    virtual void print() const;
-    virtual bool transition(Automate &automate, Symbole *s);
+class E9 : public Etat {
+	public :
+	    E9(string name);
+	    virtual ~E9();
+	    virtual void print() const;
+	    virtual bool transition(Automate * automate, Symbole *s);
 };
 
 
