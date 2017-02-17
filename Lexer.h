@@ -22,6 +22,7 @@ class Lexer {
 
   public:
     Lexer();
+    Lexer(string chaine);
     Symbole getNext(bool eat = false);
 
 };

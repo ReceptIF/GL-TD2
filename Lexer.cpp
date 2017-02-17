@@ -7,42 +7,66 @@
 #include <stdlib.h>
 
 Lexer::Lexer() {
-  chaine = "8";
+  chaine = "8+6*1";
+}
+
+Lexer::Lexer(string chaine) {
+  this->chaine = chaine;
 }
 
 Symbole Lexer::getNext(bool eat) {
-  char currentChar = chaine[0];
   int nbCharLus = 0;
+  bool charTrouve = false;
   Symbole *symbole;
   
-  if(currentChar == '+') 
+  while(!charTrouve) 
   {
-    symbole = new Plus();
-    nbCharLus++;
-  }
-  else if(currentChar == '*')
-  {
-    symbole = new Mult();
-    nbCharLus++;
-  }
-  else if(currentChar == '(')
-  {
-    symbole = new OuvrePar();
-    nbCharLus++;
-  }
-  else if(currentChar == ')')
-  {
-    symbole = new FermePar();
-    nbCharLus++;
-  }
-  else if(currentChar >= 48 && currentChar <= 58)
-  {
-    symbole = new Nombre(atoi(&currentChar));
-    nbCharLus++;
-  }
-  else if(currentChar == '\0')
-  {
-    symbole = new FinDeTexte();
+    char currentChar = chaine[nbCharLus];
+    charTrouve = true;
+    
+    if(currentChar == '+') 
+    {
+      symbole = new Plus();
+      nbCharLus++;
+    }
+    else if(currentChar == '*')
+    {
+      symbole = new Mult();
+      nbCharLus++;
+    }
+    else if(currentChar == '(')
+    {
+      symbole = new OuvrePar();
+      nbCharLus++;
+    }
+    else if(currentChar == ')')
+    {
+      symbole = new FermePar();
+      nbCharLus++;
+    }
+    else if(currentChar >= 48 && currentChar <= 58)
+    {
+      string number = ""+currentChar;
+      nbCharLus++;
+      currentChar = chaine[nbCharLus];
+      
+      while(currentChar >= 48 && currentChar <= 58) 
+      {
+        number.push_back(currentChar);
+        nbCharLus++;
+        currentChar = chaine[nbCharLus];
+      }
+      
+      symbole = new Nombre(atoi(number.c_str()));
+    }
+    else if(currentChar == '\0')
+    {
+      symbole = new FinDeTexte();
+    }
+    else {
+      nbCharLus++;
+      charTrouve = false;
+    }
   }
   
   if(eat) {

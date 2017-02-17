@@ -1,11 +1,20 @@
 #include <iostream>
 #include "Lexer.h"
+#include <string>
 
 int main() {
-    std::cout << "Hello, World!" << std::endl;
+    string chaine;
+  
+    std::cout << "Entrez votre calcul" << std::endl;
+    std::getline(std::cin,chaine);
+    std::cout << "Etude de "+chaine << std::endl;
     
-    Lexer lexer;
-    lexer.getNext();
+    Lexer lexer(chaine);
+    int val = -1;
+    
+    while(val != 7) {
+      val = lexer.getNext(true);
+    }
     
     return 0;
 }
