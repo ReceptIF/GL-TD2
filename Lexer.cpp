@@ -14,7 +14,7 @@ Lexer::Lexer(string chaine) {
   this->chaine = chaine;
 }
 
-Symbole Lexer::getNext(bool eat) {
+Symbole *Lexer::getNext(bool eat) {
   int nbCharLus = 0;
   bool charTrouve = false;
   Symbole *symbole;
@@ -74,5 +74,5 @@ Symbole Lexer::getNext(bool eat) {
   }
   
   cout << symbole->avoirJeton() << endl;
-  return *symbole;
+  return symbole;
 }

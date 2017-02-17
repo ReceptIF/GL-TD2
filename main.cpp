@@ -13,7 +13,8 @@ int main() {
     int val = -1;
     
     while(val != 7) {
-      val = lexer.getNext(true);
+      Symbole *s = lexer.getNext(true);
+      val = s->avoirJeton();
     }
     
     return 0;

@@ -3,9 +3,24 @@
 //
 
 #include "Automate.h"
+#include "Etat.h"
+#include "E0.h"
 
-Automate::Automate() {
-  lexer = new Lexer();
+Automate::Automate(string chaine) {
+  lexer = new Lexer(chaine);
+  
+  Etat *etat0 = new E0("etat0");
+  statestack.push_back(etat0);
+}
+
+void Automate::eval() 
+{
+  bool retourTransition = true;
+  while(retourTransition)
+  {
+    Symbole *symbole = lexer->getNext(true);
+    retourTransition = statestack.back()->transition(this, symbole);
+  }
 }
 
 void Automate::decalage(Symbole * s, Etat * e) {

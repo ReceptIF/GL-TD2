@@ -10,15 +10,16 @@
 
 #include "Symbole.h"
 
-using namespace std;
 class Automate;
+using namespace std;
 
 class Etat {
     public:
         Etat(const string &name);
+        void printTransition(string symbole, string action, string etat);
         virtual ~Etat();
         virtual void print() const;
-        virtual bool transition(Automate & automate,Symbole * s) = 0;
+        virtual bool transition(Automate *automate,Symbole * s) = 0;
 
     protected:
             string name;

@@ -7,9 +7,11 @@
 
 #include <vector>
 #include "Symbole.h"
-#include "Etat.h"
 #include "Lexer.h"
+#include <string>
 
+class Etat;
+class E0;
 using namespace std;
 
 class Automate {
@@ -19,8 +21,9 @@ class Automate {
     Lexer *lexer;
   
   public:
-    Automate();
+    Automate(string chaine);
     ~Automate();
+    void eval();
     void decalage(Symbole * s, Etat * e);
     void reduction(int n, Symbole * s);
 };

@@ -17,6 +17,6 @@ void E1::print() const {
     Etat::print();
 }
 
-bool E1::transition(Automate &automate, Symbole *s) {
+bool E1::transition(Automate *automate, Symbole *s) {
     return false;
 }
