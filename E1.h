@@ -8,6 +8,8 @@
 
 #include "Etat.h"
 
+class Automate;
+
 class E1 : public Etat {
   public :
     E1(string name);

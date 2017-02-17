@@ -3,3 +3,8 @@
 //
 
 #include "Expr.h"
+
+
+double Expr::eval(const map<string, double> & valeurs) {
+  return 0;
+}

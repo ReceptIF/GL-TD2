@@ -33,7 +33,7 @@ void Automate::reduction(int n, Symbole * s) {
     delete(statestack.back());
     statestack.pop_back();
   }
-  //lexer->putSymbol(s);
+  lexer->putSymbol(s);
 }
 
 Automate::~Automate() {

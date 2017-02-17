@@ -8,11 +8,14 @@
 
 #include "Etat.h"
 
-class E7 : Etat {
+class Automate;
+
+class E7 : public Etat {
+  public :
     E7(string name);
-    virtual ~E7();
-    virtual void print() const;
-    virtual bool transition(Automate &automate, Symbole *s);
+    ~E7();
+    void print() const;
+    bool transition(Automate *automate, Symbole *s);
 };
 
 

@@ -23,6 +23,7 @@ class Lexer {
   public:
     Lexer();
     Lexer(string chaine);
+    void putSymbol(Symbole * s);
     Symbole *getNext(bool eat = false);
 
 };

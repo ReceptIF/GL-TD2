@@ -14,6 +14,16 @@ Lexer::Lexer(string chaine) {
   this->chaine = chaine;
 }
 
+void Lexer::putSymbol(Symbole *s) {
+  
+  switch(*s) {
+    case EXPR:
+      chaine = '@' + chaine;
+      break;
+  }
+  
+}
+
 Symbole *Lexer::getNext(bool eat) {
   int nbCharLus = 0;
   bool charTrouve = false;
@@ -63,6 +73,11 @@ Symbole *Lexer::getNext(bool eat) {
     {
       symbole = new FinDeTexte();
     }
+    else if(currentChar == '@')
+    {
+      symbole = new Expr();
+      nbCharLus++;
+    }
     else {
       nbCharLus++;
       charTrouve = false;
@@ -73,6 +88,6 @@ Symbole *Lexer::getNext(bool eat) {
     chaine = chaine.substr(nbCharLus);
   }
   
-  cout << symbole->avoirJeton() << endl;
+  //cout << symbole->avoirJeton() << endl;
   return symbole;
 }
