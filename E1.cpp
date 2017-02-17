@@ -22,6 +22,10 @@ bool E1::transition(Automate *automate, Symbole *s) {
 			cout << "Decalage de E1 vers E5" << endl;
 			automate->decalage(s, new E5("E5"));
 			break;
+		case EoF:
+			cout << "OK" << endl;
+			automate->setEnd(true);
+			break;
 		default:
 			cout << "default" << endl;
 			break;

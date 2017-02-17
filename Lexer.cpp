@@ -18,8 +18,10 @@ string Lexer::getChaine() {
 
 Symbole Lexer::getNext(bool eat) {
   if(!eat) {
+    // Get back to previous state
     chaine = previousChaine;
   }
+
   int index = 0;
   char currentChar = chaine[index];
   Symbole *symbole;
@@ -53,28 +55,26 @@ Symbole Lexer::getNext(bool eat) {
       currentChar = chaine[++index];
     }
     symbole = new Nombre(atoi(number.c_str()));
-    cout << number << endl;
   }
-  else if(currentChar=='\0') {
+  else if(currentChar=='\0' || currentChar=='$') {
     symbole = new EOF();
     index++;
   }
   else 
   {
+    // For any other symbol, we pass it
     index++;
     chaine = chaine.substr(index);
     return NULL;
   }
-  char val = symbole->getValue();
-  if(val!='0') 
-  {
-    cout << val << endl;
-  }
+
+  // Eat the symbol
   if(eat && currentChar!='\0') {
     previousChaine = chaine;
     chaine = chaine.substr(index);
+    cout << "Chaine : " << chaine << endl;
   }
-  if(index == chaine.size()) {
+  else if(index == chaine.size()) {
     chaine = "";
   }
 

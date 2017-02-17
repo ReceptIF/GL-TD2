@@ -8,20 +8,22 @@
 
 Automate::Automate() {
 	this->eat = true;
+	this->end = true;
 }
 
 void Automate::lecture() {
 	Etat *e = new E0("E0");
 	statestack.push_back(e);
-    Lexer lexer("2+2*2");
-    while(lexer.getChaine().size() > 0) {
+	int i = 0;
+    Lexer lexer("2+2*2$");
+    do {
 	    Symbole s = lexer.getNext(this->eat);
 	    this->eat = true;
 	    e->transition(this,&s);
 	    //cout << statestack.back()->getName()<<endl;
 	    e = statestack.back();
-	    cout << "Chaine : "<<lexer.getChaine() << endl;
-    }
+	    i++;
+    } while(i<15);
 }
 
 void Automate::decalage(Symbole * s, Etat * e) {

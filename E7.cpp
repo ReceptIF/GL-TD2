@@ -31,7 +31,7 @@ bool E7::transition(Automate *automate, Symbole *s) {
 			automate->reduction(3, s);
 			break;
 		default:
-			cout << "default" << endl;
+			cout << "default E7" << endl;
 			break;
 	}
     return false;
