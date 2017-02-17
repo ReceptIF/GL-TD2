@@ -1,5 +1,6 @@
 #include "E2.h"
 #include "E3.h"
+#include "E6.h"
 #include "Automate.h"
 
 E2::E2(const string name) : Etat(name) {
@@ -26,6 +27,8 @@ bool E2::transition(Automate &automate, Symbole *s) {
             break;
         case FERMEPAR :
         case EXPR :
+            automate.decalage(s, new E6("Etat 6"));
+            break;
         case ENDOFFILE :
         default:
             break;

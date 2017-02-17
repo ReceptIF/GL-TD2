@@ -1,4 +1,5 @@
 #include "E0.h"
+#include "E1.h"
 #include "E2.h"
 #include "E3.h"
 #include "Automate.h"
@@ -27,6 +28,8 @@ bool E0::transition(Automate &automate, Symbole *s) {
             break;
         case FERMEPAR :
         case EXPR :
+            automate.decalage(s, new E1("Etat 1"));
+            break;
         case ENDOFFILE :
         default:
             break;

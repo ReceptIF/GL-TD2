@@ -18,18 +18,18 @@ bool E3::transition(Automate &automate, Symbole *s) {
     switch (*s) {
         case NOMBRE :
         case PLUS :
-            automate.reduction(5, new Expr());
+            automate.reduction(1, new Expr());
             break;
         case MULT :
-            automate.reduction(5, new Expr());
+            automate.reduction(1, new Expr());
             break;
         case OUVREPAR :
         case FERMEPAR :
-            automate.reduction(5, new Expr());
+            automate.reduction(1, new Expr());
             break;
         case EXPR :
         case ENDOFFILE :
-            automate.reduction(5, new Expr());
+            automate.reduction(1, new Expr());
             break;
         default:
             break;

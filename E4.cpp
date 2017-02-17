@@ -1,6 +1,7 @@
 #include "E4.h"
 #include "E2.h"
 #include "E3.h"
+#include "E7.h"
 #include "Automate.h"
 
 E4::E4(const string name) : Etat(name) {
@@ -27,6 +28,8 @@ bool E4::transition(Automate &automate, Symbole *s) {
             break;
         case FERMEPAR :
         case EXPR :
+            automate.decalage(s, new E7("Etat 7"));
+            break;
         case ENDOFFILE :
         default:
             break;
