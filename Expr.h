@@ -14,10 +14,13 @@
 using namespace std;
 
 class Expr : public Symbole {
+    protected:
+        int valeur;
+  
     public:
-        Expr():Symbole(EXPR) {} //TODO : EXPR aulieu de 0 (cf poly page 92)
+        Expr(int valeur):Symbole(EXPR),valeur(valeur) {} //TODO : EXPR aulieu de 0 (cf poly page 92)
         ~Expr() {}
-        double eval(const map<string, double> & valeurs);
+        int eval();
 };
 
 

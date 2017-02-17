@@ -5,6 +5,11 @@
 #include "E3.h"
 #include "Expr.h"
 #include "Automate.h"
+#include "Plus.h"
+#include "Mult.h"
+#include "FermePar.h"
+#include "OuvrePar.h"
+#include "FinDeTexte.h"
 
 E3::E3(const string name) : Etat(name) {
 
@@ -25,19 +30,19 @@ bool E3::transition(Automate *automate, Symbole *s) {
     switch(*s) {
       case PLUS:
         printTransition("PLUS","reduction","1");
-        automate->reduction(1, new Expr());
+        automate->reduction(1, new Plus());
         break;
       case MULT:
         printTransition("MULT","reduction","1");
-        automate->reduction(1, new Expr());
+        automate->reduction(1, new Mult());
         break;
       case FERMEPAR:
         printTransition("FERMEPAR","reduction","1");
-        automate->reduction(1, new Expr());
+        automate->reduction(1, new FermePar());
         break;
       case FINDETEXTE:
         printTransition("FINDETEXTE","reduction","1");
-        automate->reduction(1, new Expr());
+        automate->reduction(1, new FinDeTexte);
         break;
       default:
         cout << "Caractère non reconnu" << endl;

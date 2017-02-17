@@ -17,8 +17,17 @@ Lexer::Lexer(string chaine) {
 void Lexer::putSymbol(Symbole *s) {
   
   switch(*s) {
-    case EXPR:
-      chaine = '@' + chaine;
+    case PLUS:
+      chaine = '+' + chaine;
+      break;
+    case MULT:
+      chaine = '*' + chaine;
+      break;
+    case FERMEPAR:
+      chaine = ')' + chaine;
+      break;
+    case OUVREPAR:
+      chaine = '(' + chaine;
       break;
   }
   
@@ -72,11 +81,6 @@ Symbole *Lexer::getNext(bool eat) {
     else if(currentChar == '\0')
     {
       symbole = new FinDeTexte();
-    }
-    else if(currentChar == '@')
-    {
-      symbole = new Expr();
-      nbCharLus++;
     }
     else {
       nbCharLus++;

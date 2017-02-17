@@ -4,7 +4,7 @@
 
 #include "Nombre.h"
 
-double Nombre::eval(const map<string, double> & valeurs) {
+int Nombre::eval() {
   
   return valeur;
   

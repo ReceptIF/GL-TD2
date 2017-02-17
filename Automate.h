@@ -19,6 +19,7 @@ class Automate {
     vector<Symbole *> symbolstack;
     vector<Etat *> statestack;
     Lexer *lexer;
+    Symbole *reserve;
   
   public:
     Automate(string chaine);
@@ -26,6 +27,7 @@ class Automate {
     void eval();
     void decalage(Symbole * s, Etat * e);
     void reduction(int n, Symbole * s);
+    int calcul(vector<Symbole *> tab);
 };
 
 

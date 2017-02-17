@@ -20,7 +20,7 @@ class Nombre : public Symbole {
     public:
         Nombre(int valeur):Symbole(NOMBRE),valeur(valeur) {};
         ~Nombre() {}
-        double eval(const map<string, double> & valeurs);
+        int eval();
 };
 
 

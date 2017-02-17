@@ -17,6 +17,7 @@ class Symbole {
         void print();
         int avoirJeton();
         operator int() const { return ident; }
+        int eval();
 };
 
 

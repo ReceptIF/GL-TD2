@@ -7,3 +7,7 @@
 int Symbole::avoirJeton() {
   return ident;
 }
+
+int Symbole::eval() {
+  return 0;
+}
