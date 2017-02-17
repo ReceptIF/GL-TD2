@@ -2,6 +2,8 @@
 
 Automate::Automate(string chaine) {
     lexer = new Lexer(chaine);
+    Etat beginstate = new E0 ("Etat 0");
+    statestack.push_back(beginstate);
 }
 
 void Automate::decalage(Symbole *s, Etat *e) {
