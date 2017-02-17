@@ -9,17 +9,19 @@
 #include "Nombre.h"
 #include <string>
 
-using namespace std;
-
 class Lexer {
-protected:
-    string chaine;
+
+private:
+    std::string chaine;
+    int index;
+
+    Symbole read(bool eat = false);
 
 public:
-    Lexer();
+    Lexer(std::string s);
 
-    Symbole getNext(bool eat = false);
-
+    Symbole getNext();
+    Symbole lookNext();
 };
 
 
