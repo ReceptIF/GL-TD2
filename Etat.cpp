@@ -7,5 +7,5 @@ Etat::~Etat() {
 }
 
 void Etat::print() const {
-
+    cout << name << endl;
 }

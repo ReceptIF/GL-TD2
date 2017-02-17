@@ -16,18 +16,18 @@ bool E7::transition(Automate &automate, Symbole *s) {
     switch (*s) {
         case NOMBRE :
         case PLUS :
-            automate.reduction(s, new E2);
+            automate.reduction(7, new Expr());
             break;
         case MULT :
             automate.decalage(s, new E5);
             break;
         case OUVREPAR :
         case FERMEPAR :
-            automate.reduction(s, new E2);
+            automate.reduction(7, new Expr());
             break;
         case EXPR :
         case EOF :
-            automate.reduction(s, new E2);
+            automate.reduction(7, new Expr());
             break;
         default:
             break;
