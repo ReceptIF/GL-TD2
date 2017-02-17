@@ -54,13 +54,15 @@ int Automate::calcul(vector<Symbole *> tab) {
   
   switch(tab.size()) {
     case 1:
-      return tab.back()->eval();
+      cout << "eval single " << tab[0]->eval() << endl;
+      return tab[0]->eval();
       break;
     case 3:
       if(tab[0]->avoirJeton() == OUVREPAR) {
         return tab[1]->eval();
       }
       else if(tab[1]-> avoirJeton() == PLUS) {
+        cout << "eval plus " << tab[0]->eval() << " " << tab[2]->eval() << endl;
         return tab[0]->eval() + tab[2]->eval();
       }
       break;

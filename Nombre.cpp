@@ -6,6 +6,6 @@
 
 int Nombre::eval() {
   
-  return valeur;
+  return this->valeur;
   
 }

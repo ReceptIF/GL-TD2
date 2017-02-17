@@ -18,7 +18,7 @@ class Nombre : public Symbole {
       int valeur;
   
     public:
-        Nombre(int valeur):Symbole(NOMBRE),valeur(valeur) {};
+        Nombre(int valeur):Symbole(NOMBRE),valeur(valeur) { cout << "aff " << this->valeur << endl; }
         ~Nombre() {}
         int eval();
 };

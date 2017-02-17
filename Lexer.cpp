@@ -65,15 +65,20 @@ Symbole *Lexer::getNext(bool eat) {
     }
     else if(currentChar >= 48 && currentChar <= 58)
     {
-      string number = ""+currentChar;
-      nbCharLus++;
-      currentChar = chaine[nbCharLus];
+      //cout << "Read a number" << endl;
+      //cout << "char " << currentChar << endl;
       
-      while(currentChar >= 48 && currentChar <= 58) 
+      string number(1,currentChar);
+      //cout << "number " << number << endl;
+      
+      nbCharLus++;
+      
+      while(chaine[nbCharLus] >= 48 && chaine[nbCharLus] <= 58)
       {
-        number.push_back(currentChar);
+        //cout << "char" << chaine[nbCharLus] << endl;
+        number += chaine[nbCharLus];
+        //cout << "nombre" << number << endl;
         nbCharLus++;
-        currentChar = chaine[nbCharLus];
       }
       
       symbole = new Nombre(atoi(number.c_str()));
