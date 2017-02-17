@@ -15,13 +15,15 @@ protected :
     Lexer *lexer;
 
 public:
-    Automate();
+    Automate(string chaine);
 
     ~Automate();
 
     void decalage(Symbole *s, Etat *e);
 
     void reduction(int n, Symbole *s);
+
+    void lecture();
 };
 
 
