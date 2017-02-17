@@ -1,8 +1,12 @@
 #include "Lexer.h"
 #include <iostream>
+#include <sstream>
 #include <stdlib.h>
 
 using namespace std;
+
+Lexer::Lexer() : chaine(""), index(0) {
+}
 
 Lexer::Lexer(string s) : chaine(s), index(0) {
 }

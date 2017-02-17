@@ -18,6 +18,7 @@ private:
     Symbole read(bool eat = false);
 
 public:
+    Lexer();
     Lexer(std::string s);
 
     Symbole getNext();
