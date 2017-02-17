@@ -30,3 +30,7 @@
 
 # CLion
 .idea
+
+# CMake
+CMakeLists.txt
+cmake-build-debug/

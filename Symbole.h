@@ -14,9 +14,9 @@ public:
 
     virtual ~Symbole() {}
 
-    void print();
+    virtual void print();
 
-    operator int() const { return ident; }
+    virtual operator int() const { return ident; }
 };
 
 

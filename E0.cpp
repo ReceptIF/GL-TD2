@@ -17,14 +17,14 @@ bool E0::transition(Automate &automate, Symbole *s) {
         case NOMBRE :
             automate.decalage(s, new E3);
             break;
-        case VARIABLE :
         case PLUS :
         case MULT :
-        case EXPR :
         case OUVREPAR :
             automate.decalage(s, new E2);
             break;
         case FERMEPAR :
+        case EXPR :
+        case EOF :
         default:
             break;
     }
