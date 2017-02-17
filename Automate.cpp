@@ -40,4 +40,12 @@ void Automate::lecture() {
 
 Automate::~Automate() {
     delete lexer;
+    while(!statestack.empty()){
+        delete (statestack.back());
+        statestack.pop_back();
+    }
+    while(!symbolstack.empty()){
+        delete (symbolstack.back());
+        symbolstack.pop_back();
+    }
 }
