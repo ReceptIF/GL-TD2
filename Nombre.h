@@ -13,12 +13,12 @@
 
 using namespace std;
 
-class Nombre : public Expr {
+class Nombre : public Symbole {
     protected:
       int valeur;
   
     public:
-        Nombre(int valeur);
+        Nombre(int valeur):Symbole(NOMBRE),valeur(valeur) {};
         ~Nombre() {}
         double eval(const map<string, double> & valeurs);
 };
