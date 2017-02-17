@@ -1,0 +1,8 @@
+Lexer indications :
+    - cas fin de fichier
+    - supprimer les espaces/tabulations/saut de ligne
+    - cas simples '+', '*', '(', ')' (classe Symbole)
+    - cas digit (atoi) (classe Nombre)
+Que des pointeurs dans les stacks de Symboles et Etats
+istream : peek ou get
+putSymbol revenir en arrière sur la tête de lecture
