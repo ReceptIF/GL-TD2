@@ -18,6 +18,7 @@ class Nombre : public Expr {
       int valeur;
   
     public:
+    	int getValeur(){ return valeur; }
         Nombre(int valeur);
         ~Nombre() {}
         double eval(const map<string, double> & valeurs);

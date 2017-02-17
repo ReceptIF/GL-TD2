@@ -1,5 +1,5 @@
-RECEPTCOMP.exe: main.o Automate.o Etat.o Expr.o Lexer.o Symbole.o Mult.o Plus.o FermePar.o OuvrePar.o Nombre.o E0.o E1.o E2.o E3.o E4.o E5.o E6.o E7.o E8.o E9.o
-	g++ -o RECEPTCOMP.exe main.o Automate.o Etat.o Expr.o Lexer.o Symbole.o Mult.o Plus.o FermePar.o OuvrePar.o Nombre.o E0.o E1.o E2.o E3.o E4.o E5.o E6.o E7.o E8.o E9.o
+RECEPTCOMP.exe: main.o Automate.o Etat.o Expr.o Lexer.o Symbole.o Mult.o Plus.o FermePar.o OuvrePar.o Nombre.o EOF.o E0.o E1.o E2.o E3.o E4.o E5.o E6.o E7.o E8.o E9.o
+	g++ -o RECEPTCOMP.exe main.o Automate.o Etat.o Expr.o Lexer.o Symbole.o Mult.o Plus.o FermePar.o OuvrePar.o Nombre.o EOF.o E0.o E1.o E2.o E3.o E4.o E5.o E6.o E7.o E8.o E9.o
 
 main.o: main.cpp
 	g++ -c main.cpp
@@ -13,7 +13,7 @@ Etat.o: Etat.cpp Etat.h Symbole.h
 Expr.o: Expr.cpp Expr.h Symbole.h
 	g++ -c Expr.cpp
 
-Lexer.o: Lexer.cpp Lexer.h Symbole.h Nombre.h OuvrePar.h FermePar.h Plus.h Mult.h
+Lexer.o: Lexer.cpp Lexer.h Symbole.h Nombre.h OuvrePar.h FermePar.h Plus.h Mult.h EOF.h
 	g++ -c Lexer.cpp
 
 Symbole.o: Symbole.cpp Symbole.h
@@ -33,6 +33,9 @@ OuvrePar.o: OuvrePar.cpp OuvrePar.h Symbole.h
 
 Nombre.o: Nombre.cpp Nombre.h
 	g++ -c Nombre.cpp
+
+EOF.o: EOF.cpp EOF.h
+	g++ -c EOF.cpp
 
 E0.o: E0.cpp E0.h Etat.h
 	g++ -c E0.cpp

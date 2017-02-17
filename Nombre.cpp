@@ -14,3 +14,4 @@ double Nombre::eval(const map<string, double> & valeurs) {
   return valeur;
   
 }
+

@@ -11,6 +11,7 @@
 #include "OuvrePar.h"
 #include "FermePar.h"
 #include "Nombre.h"
+#include "EOF.h"
 #include <string>
 
 using namespace std;

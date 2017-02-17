@@ -5,8 +5,7 @@
 #ifndef GL_TD2_SYMBOLE_H
 #define GL_TD2_SYMBOLE_H
 
-enum SYMBOLE { PLUS, MULT, FERMEPAR, OUVREPAR, NOMBRE, VARIABLE, EXPR };
-
+enum SYMBOLE { PLUS, MULT, FERMEPAR, OUVREPAR, NOMBRE, VARIABLE, EXPR, EoF };
 
 class Symbole {
     protected:
@@ -14,6 +13,7 @@ class Symbole {
     public:
         Symbole(int id) : ident(id) {}
         virtual ~Symbole() {}
+        char getValue();
         void print();
         operator int() const { return ident; }
 };

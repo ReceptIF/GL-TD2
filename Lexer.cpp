@@ -7,7 +7,7 @@
 #include <stdlib.h>
 
 Lexer::Lexer() {
-  chaine = "+2";
+  chaine = "\0";
 }
 
 void Lexer::putSymbol(Symbole * s) {
@@ -17,7 +17,8 @@ void Lexer::putSymbol(Symbole * s) {
 }
 
 Symbole Lexer::getNext(bool eat) {
-  char currentChar = chaine[0];
+  int index = 0;
+  char currentChar = chaine[index];
   Symbole *symbole;
   
   if(currentChar == '+') 
@@ -38,10 +39,24 @@ Symbole Lexer::getNext(bool eat) {
   }
   else if(currentChar >= 48 && currentChar <= 58)
   {
-    symbole = new Nombre(atoi(&currentChar));
+    int number = 0;
+    while(currentChar >= 48 && currentChar <= 58)
+    {
+      symbole = new Nombre(atoi(&currentChar));
+      Nombre *n = new Nombre(atoi(&currentChar));
+      number = number*10 + n->getValeur();
+      currentChar = chaine[++index];
+    }
+    cout << number << endl;
+  }
+  else if(currentChar=='\0') {
+    symbole = new EOF();
+  }
+  char val = symbole->getValue();
+  if(val!='0') 
+  {
+    cout << val << endl;
   }
   
-  char c = *symbole;
-  cout << c << endl;
   return *symbole;
 }
