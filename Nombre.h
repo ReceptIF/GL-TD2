@@ -18,6 +18,8 @@ public:
 
     ~Nombre() {}
 
+    void print();
+
     double eval(const map<string, double> &valeurs);
 };
 

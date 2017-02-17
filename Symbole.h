@@ -1,6 +1,8 @@
 #ifndef GL_TD2_SYMBOLE_H
 #define GL_TD2_SYMBOLE_H
 
+#include <iostream>
+
 enum SYMBOLE {
     PLUS, MULT, FERMEPAR, OUVREPAR, NOMBRE, EXPR, ENDOFFILE
 };

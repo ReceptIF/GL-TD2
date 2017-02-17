@@ -11,6 +11,8 @@ using namespace std;
 
 class Mult : public Symbole {
 public:
+    void print();
+
     Mult() : Symbole(MULT) {}
 
     ~Mult() {}

@@ -29,7 +29,7 @@ bool E7::transition(Automate &automate, Symbole *s) {
             automate.reduction(7, new Expr());
             break;
         case EXPR :
-        case EOF :
+        case ENDOFFILE :
             automate.reduction(7, new Expr());
             break;
         default:

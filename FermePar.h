@@ -11,6 +11,8 @@ using namespace std;
 
 class FermePar : public Symbole {
 public:
+    void print();
+
     FermePar() : Symbole(FERMEPAR) {}
 
     ~FermePar() {}

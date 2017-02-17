@@ -10,8 +10,7 @@ int main() {
 
     for (int i = 0; i < 6; i++) {
         Symbole s = lexer.getNext();
-        char c = s;
-        cout << c << endl;
+        s.print();
     }
 
     return 0;

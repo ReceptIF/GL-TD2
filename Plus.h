@@ -11,6 +11,8 @@ using namespace std;
 
 class Plus : public Symbole {
 public:
+    void print();
+
     Plus() : Symbole(PLUS) {}
 
     ~Plus() {}

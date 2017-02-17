@@ -11,6 +11,8 @@ using namespace std;
 
 class OuvrePar : public Symbole {
 public:
+    void print();
+
     OuvrePar() : Symbole(OUVREPAR) {}
 
     ~OuvrePar() {}

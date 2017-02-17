@@ -30,7 +30,7 @@ bool E6::transition(Automate &automate, Symbole *s) {
             automate.decalage(s, new E9("Etat 9"));
             break;
         case EXPR :
-        case EOF :
+        case ENDOFFILE :
         default:
             break;
     }

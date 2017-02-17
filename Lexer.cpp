@@ -24,31 +24,43 @@ Symbole Lexer::read(bool eat) {
     char currentChar = chaine[i];
     Symbole *symbole;
 
-    if (currentChar == '+') {
-        symbole = new Plus();
-        i++;
-    } else if (currentChar == '*') {
-        symbole = new Mult();
-        i++;
-    } else if (currentChar == '(') {
-        symbole = new OuvrePar();
-        i++;
-    } else if (currentChar == ')') {
-        symbole = new FermePar();
-        i++;
-    } else if (currentChar >= 48 && currentChar <= 58) {
-        int j = 0;
-        while (currentChar >= 48 && currentChar <= 58) {
-            j++;
-            currentChar = chaine[i + j];
-        }
-        string number = chaine.substr(i, j);
-        int x;
-        stringstream convert(number);
-        convert >> x;
+    bool ok = false;
 
-        symbole = new Nombre(x);
-        i += j;
+    while (!ok) {
+        if (currentChar == '+') {
+            symbole = new Plus();
+            i++;
+            ok = true;
+        } else if (currentChar == '*') {
+            symbole = new Mult();
+            i++;
+            ok = true;
+        } else if (currentChar == '(') {
+            symbole = new OuvrePar();
+            i++;
+            ok = true;
+        } else if (currentChar == ')') {
+            symbole = new FermePar();
+            i++;
+            ok = true;
+        } else if (currentChar >= 48 && currentChar <= 58) {
+            int j = 0;
+            while (currentChar >= 48 && currentChar <= 58) {
+                j++;
+                currentChar = chaine[i + j];
+            }
+            string number = chaine.substr(i, j);
+            int x;
+            stringstream convert(number);
+            convert >> x;
+
+            symbole = new Nombre(x);
+            i += j;
+            ok = true;
+        } else {
+            i++;
+            index++;
+        }
     }
 
     index = eat ? i : index;

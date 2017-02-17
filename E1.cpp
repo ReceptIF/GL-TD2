@@ -28,7 +28,7 @@ bool E1::transition(Automate &automate, Symbole *s) {
         case OUVREPAR :
         case FERMEPAR :
         case EXPR :
-        case EOF :
+        case ENDOFFILE :
         default:
             break;
     }

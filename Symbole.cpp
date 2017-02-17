@@ -1,5 +1,7 @@
 #include "Symbole.h"
 
-void Symbole::print() {
+using namespace std;
 
+void Symbole::print() {
+    cout << "undefined" << endl;
 }

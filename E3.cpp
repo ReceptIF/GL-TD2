@@ -28,7 +28,7 @@ bool E3::transition(Automate &automate, Symbole *s) {
             automate.reduction(5, new Expr());
             break;
         case EXPR :
-        case EOF :
+        case ENDOFFILE :
             automate.reduction(5, new Expr());
             break;
         default:
