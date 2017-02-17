@@ -37,7 +37,7 @@ bool E2::transition(Automate *automate, Symbole *s) {
         automate->decalage(s, new E6("etat6"));
         break;
       default:
-        cout << "Caractère non reconnu" << endl;
+        this->printCharInconnu();
         return false;
     }
     

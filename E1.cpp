@@ -38,7 +38,7 @@ bool E1::transition(Automate *automate, Symbole *s) {
         return false;
         break;
       default:
-        cout << "Caractère non reconnu : " << s->avoirJeton() << endl;
+        this->printCharInconnu();
         return false;
     }
     

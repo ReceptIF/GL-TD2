@@ -2,6 +2,7 @@
 // Created by Olivier VICENTE on 14/02/2017.
 //
 
+#include <algorithm>
 #include "Automate.h"
 #include "Etat.h"
 #include "E0.h"
@@ -43,8 +44,9 @@ void Automate::reduction(int n, Symbole * s) {
     symbolstack.pop_back();
   }
   
+  reverse(poped.begin(), poped.end());
   int val = calcul(poped);
-  cout << "Evaluation de la réduction : " << val << endl;
+  //cout << "Evaluation de la réduction : " << val << endl;
   
   statestack.back()->transition(this, new Expr(val));
   lexer->putSymbol(s);
@@ -54,16 +56,19 @@ int Automate::calcul(vector<Symbole *> tab) {
   
   switch(tab.size()) {
     case 1:
-      cout << "eval single " << tab[0]->eval() << endl;
       return tab[0]->eval();
       break;
     case 3:
       if(tab[0]->avoirJeton() == OUVREPAR) {
         return tab[1]->eval();
       }
-      else if(tab[1]-> avoirJeton() == PLUS) {
-        cout << "eval plus " << tab[0]->eval() << " " << tab[2]->eval() << endl;
+      else if(tab[1]-> avoirJeton() == PLUS) 
+      {
         return tab[0]->eval() + tab[2]->eval();
+      }
+      else if(tab[1]-> avoirJeton() == MULT) 
+      {
+        return tab[0]->eval() * tab[2]->eval();
       }
       break;
   }

@@ -45,7 +45,7 @@ bool E9::transition(Automate *automate, Symbole *s) {
         automate->reduction(3, new FinDeTexte());
         break;
       default:
-        cout << "Caractère non reconnu" << endl;
+        this->printCharInconnu();
         return false;
     }
     

@@ -20,6 +20,7 @@ class Etat {
         virtual ~Etat();
         virtual void print() const;
         virtual bool transition(Automate *automate,Symbole * s) = 0;
+        void printCharInconnu();
 
     protected:
             string name;
