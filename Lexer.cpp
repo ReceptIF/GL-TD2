@@ -56,6 +56,12 @@ Symbole Lexer::getNext(bool eat) {
     symbole = new EOF();
     index++;
   }
+  else 
+  {
+    index++;
+    chaine = chaine.substr(index);
+    return NULL;
+  }
   char val = symbole->getValue();
   if(val!='0') 
   {

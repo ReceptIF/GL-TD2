@@ -4,7 +4,7 @@
 
 #include "Etat.h"
 
-Etat::Etat(const string &name) : name(name) {}
+Etat::Etat(string name) : name(name) {}
 
 Etat::~Etat() {
 
