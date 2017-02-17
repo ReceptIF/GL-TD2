@@ -13,5 +13,18 @@ void E7::print() const {
 }
 
 bool E7::transition(Automate &automate, Symbole *s) {
+    switch (*s) {
+        case NOMBRE :
+        case PLUS :
+        case MULT :
+            automate.decalage(s, new E5);
+            break;
+        case OUVREPAR :
+        case FERMEPAR :
+        case EXPR :
+        case EOF :
+        default:
+            break;
+    }
     return false;
 }

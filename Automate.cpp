@@ -15,7 +15,7 @@ void Automate::reduction(int n, Symbole *s) {
         statestack.pop_back();
     }
     //lexer->putSymbol(s);
-    statestack.top()->transition(*this, s);
+    statestack.front()->transition(*this, s);
 }
 
 Automate::~Automate() {

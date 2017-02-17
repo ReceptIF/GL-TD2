@@ -13,5 +13,16 @@ void E3::print() const {
 }
 
 bool E3::transition(Automate &automate, Symbole *s) {
+    switch (*s) {
+        case NOMBRE :
+        case PLUS :
+        case MULT :
+        case OUVREPAR :
+        case FERMEPAR :
+        case EXPR :
+        case EOF :
+        default:
+            break;
+    }
     return false;
 }
