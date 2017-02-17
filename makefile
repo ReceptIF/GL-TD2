@@ -1,5 +1,5 @@
-RECEPTCOMP.exe: main.o Automate.o Etat.o Expr.o Lexer.o Symbole.o Mult.o Plus.o FermePar.o OuvrePar.o Nombre.o EndOfFile.o E0.o E1.o E2.o E3.o E4.o E5.o E6.o E7.o E8.o E9.o
-	g++ -o RECEPTCOMP.exe main.o Automate.o Etat.o Expr.o Lexer.o Symbole.o Mult.o Plus.o FermePar.o OuvrePar.o Nombre.o EndOfFile.o E0.o E1.o E2.o E3.o E4.o E5.o E6.o E7.o E8.o E9.o
+RECEPTCOMP.exe: main.o Automate.o Etat.o Expr.o ExprBin.o ExprMult.o ExprPlus.o Lexer.o Symbole.o Mult.o Plus.o FermePar.o OuvrePar.o Nombre.o EndOfFile.o E0.o E1.o E2.o E3.o E4.o E5.o E6.o E7.o E8.o E9.o
+	g++ -o RECEPTCOMP.exe main.o Automate.o Etat.o Expr.o ExprBin.o ExprMult.o ExprPlus.o Lexer.o Symbole.o Mult.o Plus.o FermePar.o OuvrePar.o Nombre.o EndOfFile.o E0.o E1.o E2.o E3.o E4.o E5.o E6.o E7.o E8.o E9.o
 
 main.o: main.cpp
 	g++ -c main.cpp
@@ -12,6 +12,15 @@ Etat.o: Etat.cpp Etat.h Symbole.h
 
 Expr.o: Expr.cpp Expr.h Symbole.h
 	g++ -c Expr.cpp
+
+ExprBin.o: ExprBin.cpp ExprBin.h Symbole.h
+	g++ -c ExprBin.cpp
+
+ExprMult.o: ExprMult.cpp ExprMult.h Symbole.h
+	g++ -c ExprMult.cpp
+
+ExprPlus.o: ExprPlus.cpp ExprPlus.h Symbole.h
+	g++ -c ExprPlus.cpp
 
 Lexer.o: Lexer.cpp Lexer.h Symbole.h Nombre.h OuvrePar.h FermePar.h Plus.h Mult.h
 	g++ -c Lexer.cpp

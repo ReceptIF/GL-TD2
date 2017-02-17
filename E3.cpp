@@ -15,21 +15,30 @@ void E3::print() const {
 }
 
 bool E3::transition(Automate &automate, Symbole *s) {
+    Symbole * expr;
     switch (*s) {
         case NOMBRE :
         case PLUS :
-            automate.reduction(1, new Expr());
+            expr = automate.symbolstack.back();
+            automate.symbolstack.pop_back();
+            automate.reduction(1, expr);
             break;
         case MULT :
-            automate.reduction(1, new Expr());
+            expr = automate.symbolstack.back();
+            automate.symbolstack.pop_back();
+            automate.reduction(1, expr);
             break;
         case OUVREPAR :
         case FERMEPAR :
-            automate.reduction(1, new Expr());
+            expr = automate.symbolstack.back();
+            automate.symbolstack.pop_back();
+            automate.reduction(1, expr);
             break;
         case EXPR :
         case ENDOFFILE :
-            automate.reduction(1, new Expr());
+            expr = automate.symbolstack.back();
+            automate.symbolstack.pop_back();
+            automate.reduction(1, expr);
             break;
         default:
             break;

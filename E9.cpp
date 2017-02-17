@@ -15,21 +15,38 @@ void E9::print() const {
 }
 
 bool E9::transition(Automate &automate, Symbole *s) {
+    Symbole * expr;
     switch (*s) {
         case NOMBRE :
         case PLUS :
-            automate.reduction(3, new Expr());
+            automate.symbolstack.pop_back();
+            expr = automate.symbolstack.back();
+            automate.symbolstack.pop_back();
+            automate.symbolstack.pop_back();
+            automate.reduction(3, expr);
             break;
         case MULT :
-            automate.reduction(3, new Expr());
+            automate.symbolstack.pop_back();
+            expr = automate.symbolstack.back();
+            automate.symbolstack.pop_back();
+            automate.symbolstack.pop_back();
+            automate.reduction(3, expr);
             break;
         case OUVREPAR :
         case FERMEPAR :
-            automate.reduction(3, new Expr());
+            automate.symbolstack.pop_back();
+            expr = automate.symbolstack.back();
+            automate.symbolstack.pop_back();
+            automate.symbolstack.pop_back();
+            automate.reduction(3, expr);
             break;
         case EXPR :
         case ENDOFFILE :
-            automate.reduction(3, new Expr());
+            automate.symbolstack.pop_back();
+            expr = automate.symbolstack.back();
+            automate.symbolstack.pop_back();
+            automate.symbolstack.pop_back();
+            automate.reduction(3, expr);
             break;
         default:
             break;

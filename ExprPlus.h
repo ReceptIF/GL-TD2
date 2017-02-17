@@ -6,7 +6,7 @@
 
 class ExprPlus : public ExprBin{
 public:
-    ExprPlus(Symbole s1, Symbole s2) : ExprBin(s1,s2) {};
+    ExprPlus(Symbole * sGauche, Symbole * sDroite) : ExprBin(sGauche,sDroite) {};
 
     ~ExprPlus() {};
 

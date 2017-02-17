@@ -1,6 +1,7 @@
 #include "E8.h"
-#include "Expr.h"
+#include "ExprMult.h"
 #include "Automate.h"
+#include "Symbole.h"
 
 E8::E8(const string name) : Etat(name) {
 
@@ -15,21 +16,43 @@ void E8::print() const {
 }
 
 bool E8::transition(Automate &automate, Symbole *s) {
+    Symbole * exprD;
+    Symbole * exprG;
     switch (*s) {
         case NOMBRE :
         case PLUS :
-            automate.reduction(3, new Expr());
+            exprD = automate.symbolstack.back();
+            automate.symbolstack.pop_back();
+            automate.symbolstack.pop_back();
+            exprG = automate.symbolstack.back();
+            automate.symbolstack.pop_back();
+            automate.reduction(3, new ExprMult(exprG,exprD));
             break;
         case MULT :
-            automate.reduction(3, new Expr());
+            exprD = automate.symbolstack.back();
+            automate.symbolstack.pop_back();
+            automate.symbolstack.pop_back();
+            exprG = automate.symbolstack.back();
+            automate.symbolstack.pop_back();
+            automate.reduction(3, new ExprMult(exprG,exprD));
             break;
         case OUVREPAR :
         case FERMEPAR :
-            automate.reduction(3, new Expr());
+            exprD = automate.symbolstack.back();
+            automate.symbolstack.pop_back();
+            automate.symbolstack.pop_back();
+            exprG = automate.symbolstack.back();
+            automate.symbolstack.pop_back();
+            automate.reduction(3, new ExprMult(exprG,exprD));
             break;
         case EXPR :
         case ENDOFFILE :
-            automate.reduction(3, new Expr());
+            exprD = automate.symbolstack.back();
+            automate.symbolstack.pop_back();
+            automate.symbolstack.pop_back();
+            exprG = automate.symbolstack.back();
+            automate.symbolstack.pop_back();
+            automate.reduction(3, new ExprMult(exprG,exprD));
             break;
         default:
             break;

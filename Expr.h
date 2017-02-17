@@ -1,7 +1,3 @@
-//
-// Created by Olivier VICENTE on 14/02/2017.
-//
-
 #ifndef GL_TD2_EXPR_H
 #define GL_TD2_EXPR_H
 

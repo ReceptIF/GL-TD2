@@ -10,10 +10,10 @@
 
 class ExprBin : public Expr {
 protected:
-    Symbole s1;
-    Symbole s2;
+    Symbole * sGauche;
+    Symbole * sDroite;
 public:
-    ExprBin(Symbole s1, Symbole s2) : Expr(), s1(s1), s2(s2) {};
+    ExprBin(Symbole * sGauche, Symbole * sDroite) : Expr(), sGauche(sGauche), sDroite(sDroite) {};
 
     virtual ~ExprBin() {};
 

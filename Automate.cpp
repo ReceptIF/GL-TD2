@@ -10,6 +10,8 @@ Automate::Automate(string chaine) {
 }
 
 void Automate::decalage(Symbole *s, Etat *e) {
+    cout << "décalage : ";
+    e->print();
     symbolstack.push_back(s);
     if(*s != EXPR){
         lexer->getNext();
@@ -18,6 +20,7 @@ void Automate::decalage(Symbole *s, Etat *e) {
 }
 
 void Automate::reduction(int n, Symbole *s) {
+    cout << "réduction : " << n << endl;
     for (int i = 0; i < n; i++) {
         delete (statestack.back());
         statestack.pop_back();

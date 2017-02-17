@@ -6,9 +6,9 @@
 
 class ExprMult : public ExprBin{
 public:
-    ExprMult(Symbole s1, Symbole s2) : ExprBin(s1, s2) {};
+    ExprMult(Symbole * sGauche, Symbole * sDroite) : ExprBin(sGauche, sDroite) {};
 
-    virtual ~ExprMult();
+    virtual ~ExprMult() {};
 
     virtual double eval(const map<string, double> &valeurs);
 };

@@ -6,9 +6,7 @@ Nombre::Nombre(int valeur) {
 }
 
 double Nombre::eval(const map<string, double> &valeurs) {
-
     return valeur;
-
 }
 
 void Nombre::print() {

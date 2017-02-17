@@ -9,12 +9,11 @@
 using namespace std;
 
 class Automate {
-protected :
+public :
     vector<Symbole *> symbolstack;
     vector<Etat *> statestack;
     Lexer *lexer;
 
-public:
     Automate(string chaine);
 
     ~Automate();

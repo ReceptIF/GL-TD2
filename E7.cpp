@@ -1,4 +1,5 @@
 #include "E7.h"
+#include "ExprPlus.h"
 #include "Expr.h"
 #include "E5.h"
 #include "Automate.h"
@@ -16,21 +17,38 @@ void E7::print() const {
 }
 
 bool E7::transition(Automate &automate, Symbole *s) {
+    Symbole * exprD;
+    Symbole * exprG;
     switch (*s) {
         case NOMBRE :
         case PLUS :
-            automate.reduction(3, new Expr());
+            exprD = automate.symbolstack.back();
+            automate.symbolstack.pop_back();
+            automate.symbolstack.pop_back();
+            exprG = automate.symbolstack.back();
+            automate.symbolstack.pop_back();
+            automate.reduction(3, new ExprPlus(exprG,exprD));
             break;
         case MULT :
             automate.decalage(s, new E5("Etat 5"));
             break;
         case OUVREPAR :
         case FERMEPAR :
-            automate.reduction(3, new Expr());
+            exprD = automate.symbolstack.back();
+            automate.symbolstack.pop_back();
+            automate.symbolstack.pop_back();
+            exprG = automate.symbolstack.back();
+            automate.symbolstack.pop_back();
+            automate.reduction(3, new ExprPlus(exprG,exprD));
             break;
         case EXPR :
         case ENDOFFILE :
-            automate.reduction(3, new Expr());
+            exprD = automate.symbolstack.back();
+            automate.symbolstack.pop_back();
+            automate.symbolstack.pop_back();
+            exprG = automate.symbolstack.back();
+            automate.symbolstack.pop_back();
+            automate.reduction(3, new ExprPlus(exprG,exprD));
             break;
         default:
             break;

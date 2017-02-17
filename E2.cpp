@@ -18,7 +18,7 @@ void E2::print() const {
 bool E2::transition(Automate &automate, Symbole *s) {
     switch (*s) {
         case NOMBRE :
-            automate.decalage(s, new E3("Etat E3"));
+            automate.decalage(s, new E3("Etat 3"));
             break;
         case PLUS :
         case MULT :
