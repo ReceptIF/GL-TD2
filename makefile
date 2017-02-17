@@ -1,5 +1,3 @@
-SHELL=C:/Windows/System32/cmd.exe
-
 RECEPTCOMP.exe: main.o Automate.o Etat.o Expr.o Lexer.o Symbole.o Mult.o Plus.o FermePar.o OuvrePar.o Nombre.o EndOfFile.o E0.o E1.o E2.o E3.o E4.o E5.o E6.o E7.o E8.o E9.o
 	g++ -o RECEPTCOMP.exe main.o Automate.o Etat.o Expr.o Lexer.o Symbole.o Mult.o Plus.o FermePar.o OuvrePar.o Nombre.o EndOfFile.o E0.o E1.o E2.o E3.o E4.o E5.o E6.o E7.o E8.o E9.o
 
