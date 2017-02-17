@@ -6,14 +6,14 @@
 #include <iostream>
 #include <stdlib.h>
 
-Lexer::Lexer() {
-  chaine = "\0";
-}
-
 void Lexer::putSymbol(Symbole * s) {
   
   //TODO: this.
   
+}
+
+string Lexer::getChaine() {
+  return this->chaine;
 }
 
 Symbole Lexer::getNext(bool eat) {
@@ -24,39 +24,49 @@ Symbole Lexer::getNext(bool eat) {
   if(currentChar == '+') 
   {
     symbole = new Plus();
+    index++;
   }
   else if(currentChar == '*')
   {
     symbole = new Mult();
+    index++;
   }
   else if(currentChar == '(')
   {
     symbole = new OuvrePar();
+    index++;
   }
   else if(currentChar == ')')
   {
     symbole = new FermePar();
+    index++;
   }
   else if(currentChar >= 48 && currentChar <= 58)
   {
-    int number = 0;
+    string number = "";
     while(currentChar >= 48 && currentChar <= 58)
     {
-      symbole = new Nombre(atoi(&currentChar));
-      Nombre *n = new Nombre(atoi(&currentChar));
-      number = number*10 + n->getValeur();
+      number += currentChar;
       currentChar = chaine[++index];
     }
+    symbole = new Nombre(atoi(number.c_str()));
     cout << number << endl;
   }
   else if(currentChar=='\0') {
     symbole = new EOF();
+    index++;
   }
   char val = symbole->getValue();
   if(val!='0') 
   {
     cout << val << endl;
   }
-  
+  if(eat && currentChar!='\0') {
+    chaine = chaine.substr(index);
+  }
+  if(index == chaine.size()) {
+    chaine = "";
+  }
+
   return *symbole;
 }

@@ -3,8 +3,10 @@
 
 int main() {
     
-    Lexer lexer;
-    lexer.getNext();
+    Lexer lexer("1525214+569+856");
+    while(lexer.getChaine().size() > 0){
+    	lexer.getNext(true);
+    }
     
     return 0;
 }

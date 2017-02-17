@@ -5,7 +5,7 @@
 #include "Automate.h"
 
 Automate::Automate() {
-  lexer = new Lexer();
+  //lexer = new Lexer();
 }
 
 void Automate::decalage(Symbole * s, Etat * e) {

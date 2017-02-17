@@ -21,7 +21,8 @@ class Lexer {
     string chaine;
 
   public:
-    Lexer();
+    Lexer(string chaine){this->chaine = chaine;}
+    string getChaine();
     void putSymbol(Symbole * s);
     Symbole getNext(bool eat = false);
 
