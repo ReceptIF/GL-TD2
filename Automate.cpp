@@ -24,7 +24,8 @@ void Automate::eval()
   }
   
   cout << "Fin de la lecture" << endl;
-  for(int i=0;i<symbolstack.size();++i)
+  int i;
+  for(i=0;i<symbolstack.size();++i)
     cout << symbolstack[i]->eval() << endl;
 }
 
@@ -79,4 +80,11 @@ int Automate::calcul(vector<Symbole *> tab) {
 
 Automate::~Automate() {
   delete lexer;
+  int i;
+  for(i=0;i<symbolstack.size();++i) {
+    delete symbolstack[i];
+  }
+  for(i=0;i<statestack.size();++i) {
+    delete statestack[i];
+  }
 }
