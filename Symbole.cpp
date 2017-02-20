@@ -3,7 +3,11 @@
 using namespace std;
 
 void Symbole::print() {
-    cout << "undefined" << endl;
+    cout << "undefined";
+}
+
+int Symbole::eval() {
+    return 0;
 }
 
 int Symbole::getIdent() {

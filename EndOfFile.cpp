@@ -3,5 +3,5 @@
 using namespace std;
 
 void EndOfFile::print() {
-    cout << "$" << endl;
+    cout << "$";
 }

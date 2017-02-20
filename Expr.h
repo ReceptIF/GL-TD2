@@ -10,11 +10,14 @@
 using namespace std;
 
 class Expr : public Symbole {
+protected:
+    int valeur;
 public:
-    Expr() : Symbole(EXPR) {}
+    Expr(int valeur) : valeur(valeur), Symbole(EXPR) {}
+    Expr(int valeur,int ident) : valeur(valeur), Symbole(ident) {}
     virtual ~Expr() {}
-
-    virtual double eval(const map<string, double> &valeurs) {return 0;};
+    virtual void print();
+    virtual int eval() {return valeur;};
 };
 
 

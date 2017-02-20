@@ -1,41 +1,78 @@
 #include "Automate.h"
 #include "E0.h"
+#include "Expr.h"
 
 Automate::Automate(string chaine) {
     lexer = new Lexer(chaine);
-    Etat * beginstate = new E0("Etat 0");
+    Etat * beginstate = new E0("E0");
     Symbole * endOfFile = new EndOfFile();
     statestack.push_back(beginstate);
     symbolstack.push_back(endOfFile);
+    accepted = false;
 }
 
 void Automate::decalage(Symbole *s, Etat *e) {
-    cout << "décalage : ";
-    e->print();
-    symbolstack.push_back(s);
+    cout << " S:";
+    printSymbolStack();
+    cout << " E:";
+    printStateStack();
+
+
+
+
     if(*s != EXPR){
+        symbolstack.push_back(s);
         lexer->getNext();
     }
     statestack.push_back(e);
+
+
+
+
+    cout << " " << "décalage : ";
+    e->print();
+    cout << endl;
+    cout << " S:";
+    printSymbolStack();
+    cout << " E:";
+    printStateStack();
+    cout << endl;
+    cout << endl;
 }
 
 void Automate::reduction(int n, Symbole *s) {
-    cout << "réduction : " << n << endl;
+    cout << " S:";
+    printSymbolStack();
+    cout << " E:";
+    printStateStack();
+
+
     for (int i = 0; i < n; i++) {
         delete (statestack.back());
         statestack.pop_back();
     }
+    symbolstack.push_back(s);
+
+
+    cout << " réduction : " << n << endl;
+    cout << " S:";
+    printSymbolStack();
+    cout << " E:";
+    printStateStack();
+    cout << endl;
+    cout << endl;
+
+
+
     statestack.back()->transition(*this, s);
 }
 
 void Automate::lecture() {
     Symbole *s = lexer->lookNext();
-    while (s->getIdent() != ENDOFFILE) {
-        s->print();
+    while (!accepted) {
         statestack.back()->transition(*this,s);
         s = lexer->lookNext();
     }
-    s->print();
 }
 
 Automate::~Automate() {
@@ -48,4 +85,14 @@ Automate::~Automate() {
         delete (symbolstack.back());
         symbolstack.pop_back();
     }
+}
+
+void Automate::printSymbolStack() {
+    for(int i=0;i<symbolstack.size();i++){symbolstack.at(i)->print();}
+    cout << endl;
+}
+
+void Automate::printStateStack() {
+    for(int i=0;i<statestack.size();i++){statestack.at(i)->print();}
+    cout << endl;
 }

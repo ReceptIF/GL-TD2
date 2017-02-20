@@ -1,5 +1,5 @@
 #include "E8.h"
-#include "ExprMult.h"
+#include "Expr.h"
 #include "Automate.h"
 #include "Symbole.h"
 
@@ -26,7 +26,7 @@ bool E8::transition(Automate &automate, Symbole *s) {
             automate.symbolstack.pop_back();
             exprG = automate.symbolstack.back();
             automate.symbolstack.pop_back();
-            automate.reduction(3, new ExprMult(exprG,exprD));
+            automate.reduction(3, new Expr(exprG->eval()*exprD->eval()));
             break;
         case MULT :
             exprD = automate.symbolstack.back();
@@ -34,7 +34,7 @@ bool E8::transition(Automate &automate, Symbole *s) {
             automate.symbolstack.pop_back();
             exprG = automate.symbolstack.back();
             automate.symbolstack.pop_back();
-            automate.reduction(3, new ExprMult(exprG,exprD));
+            automate.reduction(3, new Expr(exprG->eval()*exprD->eval()));
             break;
         case OUVREPAR :
         case FERMEPAR :
@@ -43,7 +43,7 @@ bool E8::transition(Automate &automate, Symbole *s) {
             automate.symbolstack.pop_back();
             exprG = automate.symbolstack.back();
             automate.symbolstack.pop_back();
-            automate.reduction(3, new ExprMult(exprG,exprD));
+            automate.reduction(3, new Expr(exprG->eval()*exprD->eval()));
             break;
         case EXPR :
         case ENDOFFILE :
@@ -52,7 +52,7 @@ bool E8::transition(Automate &automate, Symbole *s) {
             automate.symbolstack.pop_back();
             exprG = automate.symbolstack.back();
             automate.symbolstack.pop_back();
-            automate.reduction(3, new ExprMult(exprG,exprD));
+            automate.reduction(3, new Expr(exprG->eval()*exprD->eval()));
             break;
         default:
             break;

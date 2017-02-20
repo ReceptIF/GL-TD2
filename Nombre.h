@@ -10,17 +10,14 @@
 using namespace std;
 
 class Nombre : public Expr {
-protected:
-    int valeur;
-
 public:
-    Nombre(int valeur);
+    Nombre(int valeur) : Expr(valeur,NOMBRE) {};
 
-    ~Nombre() {}
+    ~Nombre() {};
 
-    void print();
+    void print() { cout << valeur << " ";};
 
-    double eval(const map<string, double> &valeurs);
+    int eval() {return valeur;};
 };
 
 

@@ -1,5 +1,4 @@
 #include "E7.h"
-#include "ExprPlus.h"
 #include "Expr.h"
 #include "E5.h"
 #include "Automate.h"
@@ -27,10 +26,11 @@ bool E7::transition(Automate &automate, Symbole *s) {
             automate.symbolstack.pop_back();
             exprG = automate.symbolstack.back();
             automate.symbolstack.pop_back();
-            automate.reduction(3, new ExprPlus(exprG,exprD));
+            cout << exprG->eval() << "+" << exprD->eval() << endl;
+            automate.reduction(3, new Expr(exprG->eval()+exprD->eval()));
             break;
         case MULT :
-            automate.decalage(s, new E5("Etat 5"));
+            automate.decalage(s, new E5("E5"));
             break;
         case OUVREPAR :
         case FERMEPAR :
@@ -39,7 +39,8 @@ bool E7::transition(Automate &automate, Symbole *s) {
             automate.symbolstack.pop_back();
             exprG = automate.symbolstack.back();
             automate.symbolstack.pop_back();
-            automate.reduction(3, new ExprPlus(exprG,exprD));
+            cout << exprG->eval() << "+" << exprD->eval() << endl;
+            automate.reduction(3, new Expr(exprG->eval()+exprD->eval()));
             break;
         case EXPR :
         case ENDOFFILE :
@@ -48,7 +49,8 @@ bool E7::transition(Automate &automate, Symbole *s) {
             automate.symbolstack.pop_back();
             exprG = automate.symbolstack.back();
             automate.symbolstack.pop_back();
-            automate.reduction(3, new ExprPlus(exprG,exprD));
+            cout << exprG->eval() << "+" << exprD->eval() << endl;
+            automate.reduction(3, new Expr(exprG->eval()+exprD->eval()));
             break;
         default:
             break;

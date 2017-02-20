@@ -18,16 +18,16 @@ void E2::print() const {
 bool E2::transition(Automate &automate, Symbole *s) {
     switch (*s) {
         case NOMBRE :
-            automate.decalage(s, new E3("Etat 3"));
+            automate.decalage(s, new E3("E3"));
             break;
         case PLUS :
         case MULT :
         case OUVREPAR :
-            automate.decalage(s, new E2("Etat 2"));
+            automate.decalage(s, new E2("E2"));
             break;
         case FERMEPAR :
         case EXPR :
-            automate.decalage(s, new E6("Etat 6"));
+            automate.decalage(s, new E6("E6"));
             break;
         case ENDOFFILE :
         default:

@@ -20,6 +20,8 @@ public:
 
     virtual void print();
 
+    virtual int eval();
+
     virtual operator int() const { return ident; }
 };
 

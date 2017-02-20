@@ -20,16 +20,16 @@ bool E1::transition(Automate &automate, Symbole *s) {
     switch (*s) {
         case NOMBRE :
         case PLUS :
-            automate.decalage(s, new E4("Etat 4"));
+            automate.decalage(s, new E4("E4"));
             break;
         case MULT :
-            automate.decalage(s, new E5("Etat 5"));
+            automate.decalage(s, new E5("E5"));
             break;
         case OUVREPAR :
         case FERMEPAR :
         case EXPR :
         case ENDOFFILE :
-            exit(0);
+            automate.accepted = true;
         default:
             break;
     }

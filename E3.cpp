@@ -21,24 +21,24 @@ bool E3::transition(Automate &automate, Symbole *s) {
         case PLUS :
             expr = automate.symbolstack.back();
             automate.symbolstack.pop_back();
-            automate.reduction(1, expr);
+            automate.reduction(1, new Expr(expr->eval()));
             break;
         case MULT :
             expr = automate.symbolstack.back();
             automate.symbolstack.pop_back();
-            automate.reduction(1, expr);
+            automate.reduction(1, new Expr(expr->eval()));
             break;
         case OUVREPAR :
         case FERMEPAR :
             expr = automate.symbolstack.back();
             automate.symbolstack.pop_back();
-            automate.reduction(1, expr);
+            automate.reduction(1, new Expr(expr->eval()));
             break;
         case EXPR :
         case ENDOFFILE :
             expr = automate.symbolstack.back();
             automate.symbolstack.pop_back();
-            automate.reduction(1, expr);
+            automate.reduction(1, new Expr(expr->eval()));
             break;
         default:
             break;

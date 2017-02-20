@@ -23,14 +23,14 @@ bool E9::transition(Automate &automate, Symbole *s) {
             expr = automate.symbolstack.back();
             automate.symbolstack.pop_back();
             automate.symbolstack.pop_back();
-            automate.reduction(3, expr);
+            automate.reduction(3, new Expr(expr->eval()));
             break;
         case MULT :
             automate.symbolstack.pop_back();
             expr = automate.symbolstack.back();
             automate.symbolstack.pop_back();
             automate.symbolstack.pop_back();
-            automate.reduction(3, expr);
+            automate.reduction(3, new Expr(expr->eval()));
             break;
         case OUVREPAR :
         case FERMEPAR :
@@ -38,7 +38,7 @@ bool E9::transition(Automate &automate, Symbole *s) {
             expr = automate.symbolstack.back();
             automate.symbolstack.pop_back();
             automate.symbolstack.pop_back();
-            automate.reduction(3, expr);
+            automate.reduction(3, new Expr(expr->eval()));
             break;
         case EXPR :
         case ENDOFFILE :
@@ -46,7 +46,7 @@ bool E9::transition(Automate &automate, Symbole *s) {
             expr = automate.symbolstack.back();
             automate.symbolstack.pop_back();
             automate.symbolstack.pop_back();
-            automate.reduction(3, expr);
+            automate.reduction(3, new Expr(expr->eval()));
             break;
         default:
             break;
