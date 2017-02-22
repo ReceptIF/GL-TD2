@@ -8,23 +8,35 @@
 
 Automate::Automate() {
 	this->eat = true;
-	this->end = true;
 }
 
 void Automate::lecture() {
   	Etat *e = new E0("E0");
   	statestack.push_back(e);
-  	int i = 0;
-    Lexer lexer("(1+2*5)*4$");
-    do {	    
-      	Symbole * s = lexer.getNext(this->eat);
-  	    this->eat = true;
-  	    e->transition(this,s);
-  	    e = statestack.back();
-  	    i++;	    
-    } while(i<50);
+  	bool end = false;
+    Symbole * s;
+    string chaine = "1+(2 *4)";
+    Lexer lexer(chaine+'$');
+    do {	
+        if(!this->eat) {
+          lexer.putSymbol(s);
+        }
+        this->eat = true;
+      	s = lexer.getNext();
+        if(s!=NULL) {
+      	    end = e->transition(this,s);
+      	    e = statestack.back();
+        }
+    } while(!end);
 
-    cout << symbolstack[0]->getValeur() << endl;
+    // If the calcul was succesful
+    if(e->getName().compare("E1") == 0 && *s==7) {
+        cout << "--------------------------------" << endl;
+        cout << chaine << " = " << symbolstack[0]->getValeur() << endl;
+        cout << "--------------------------------" << endl;
+    } else {
+        cout << "Error" << endl;
+    }
 }
 
 void Automate::decalage(Symbole * s, Etat * e) {

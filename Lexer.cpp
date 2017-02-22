@@ -7,21 +7,29 @@
 #include <stdlib.h>
 
 void Lexer::putSymbol(Symbole * s) {
-  
-  //TODO: this.
-  
+  switch(*s) {
+      case PLUS:
+          this->chaine = '+' + this->chaine; 
+          break;
+      case MULT:
+          this->chaine = '*' + this->chaine; 
+          break;
+      case OUVREPAR:
+          this->chaine = '(' + this->chaine; 
+          break;
+      case FERMEPAR:
+          this->chaine = ')' + this->chaine; 
+          break;
+      default:
+          break;
+  }  
 }
 
 string Lexer::getChaine() {
   return this->chaine;
 }
 
-Symbole* Lexer::getNext(bool eat) {
-  if(!eat) {
-    // Get back to previous state
-    chaine = previousChaine;
-  }
-
+Symbole* Lexer::getNext() {
   int index = 0;
   char currentChar = chaine[index];
   Symbole *symbole;
@@ -62,20 +70,18 @@ Symbole* Lexer::getNext(bool eat) {
   }
   else 
   {
-    // For any other symbol, we pass it
+    // For any other symbol, we ignore it
     index++;
     chaine = chaine.substr(index);
     return NULL;
   }
 
   // Eat the symbol
-  if(eat && currentChar!='\0') {
-    previousChaine = chaine;
+  if(currentChar!='\0') {
     chaine = chaine.substr(index);
   }
   else if(index == chaine.size()) {
     chaine = "";
   }
-
   return symbole;
 }

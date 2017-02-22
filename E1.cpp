@@ -15,20 +15,19 @@ void E1::print() const {
 bool E1::transition(Automate *automate, Symbole *s) {
 	switch(*s){
 		case PLUS:
-			//cout << "Decalage de E1 vers E4" << endl;
+			cout << "Decalage de E1 vers E4" << endl;
 			automate->decalage(s, new E4("E4"));
 			break;
 		case MULT:
-			//cout << "Decalage de E1 vers E5" << endl;
+			cout << "Decalage de E1 vers E5" << endl;
 			automate->decalage(s, new E5("E5"));
 			break;
 		case EoF:
-			//cout << "OK" << endl;
-			automate->setEnd(true);
+			cout << "OK" << endl;
+			return true;
 			break;
 		default:
-			//cout << "default" << endl;
-			break;
+			return true;
 	}
     return false;
 }

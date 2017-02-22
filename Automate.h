@@ -15,14 +15,12 @@ using namespace std;
 class Automate {
   protected :
   	bool eat;
-  	bool end;
     vector<Symbole *> symbolstack;
     vector<Etat *> statestack;
   
   public:
     Automate();
     ~Automate();
-    void setEnd(bool b){this->end = b;}
     void lecture();
     void decalage(Symbole * s, Etat * e);
     void reduction(int n, Symbole * s);
