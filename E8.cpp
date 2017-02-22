@@ -13,26 +13,25 @@ void E8::print() const {
 }
 
 bool E8::transition(Automate *automate, Symbole *s) {
-		cout << s->getValue() << endl;
 	switch(*s){
 		case PLUS:
-			cout << "Réduction de E8" << endl;
+			//cout << "Réduction de E8" << endl;
 			automate->reduction(3, s);
 			break;
 		case MULT:
-			cout << "Réduction de E8" << endl;
+			//cout << "Réduction de E8" << endl;
 			automate->reduction(3, s);
 			break;
 		case FERMEPAR:
-			cout << "Réduction de E8" << endl;
+			//cout << "Réduction de E8" << endl;
 			automate->reduction(3, s);
 			break;
 		case EoF:
-			cout << "Réduction de E8" << endl;
+			//cout << "Réduction de E8" << endl;
 			automate->reduction(3, s);
 			break;
 		default:
-			cout << "default E8" << endl;
+			//cout << "default E8" << endl;
 			break;
 	}
     return false;

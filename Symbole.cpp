@@ -1,7 +1,3 @@
-//
-// Created by Olivier VICENTE on 14/02/2017.
-//
-
 #include "Symbole.h"
 #include <iostream>
 #include <string>
@@ -31,4 +27,8 @@ char Symbole::getValue() {
 		default:
 			break;
 	}
+}
+
+int Symbole::getValeur() {
+	return 0;
 }

@@ -15,23 +15,23 @@ void E7::print() const {
 bool E7::transition(Automate *automate, Symbole *s) {
 	switch(*s){
 		case PLUS:
-			cout << "Réduction de E7" << endl;
+			//cout << "Réduction de E7" << endl;
 			automate->reduction(3, s);
 			break;
 		case MULT:
-			cout << "Decalage de E7 vers E5" << endl;
+			//cout << "Decalage de E7 vers E5" << endl;
 			automate->decalage(s, new E5("E5"));
 			break;
 		case FERMEPAR:
-			cout << "Réduction de E7" << endl;
+			//cout << "Réduction de E7" << endl;
 			automate->reduction(3, s);
 			break;
 		case EoF:
-			cout << "Réduction de E7" << endl;
+			//cout << "Réduction de E7" << endl;
 			automate->reduction(3, s);
 			break;
 		default:
-			cout << "default E7" << endl;
+			//cout << "default E7" << endl;
 			break;
 	}
     return false;

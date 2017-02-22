@@ -15,20 +15,19 @@ void E4::print() const {
 bool E4::transition(Automate *automate, Symbole *s) {
 	switch(*s){
 		case OUVREPAR:
-			cout << "Decalage de E4 vers E2" << endl;
+			//cout << "Decalage de E4 vers E2" << endl;
 			automate->decalage(s, new E2("E2"));
 			break;
 		case NOMBRE:
-			cout << "Decalage de E4 vers E3" << endl;
+			//cout << "Decalage de E4 vers E3" << endl;
 			automate->decalage(s, new E3("E3"));
 			break;
 		case EXPR:
-			cout << "Decalage de E4 vers E7" << endl;
+			//cout << "Decalage de E4 vers E7" << endl;
 			automate->decalage(s, new E7("E7"));
 			break;
 		default:
-			cout << *s << endl;
-			cout << "default E4" << endl;
+			//cout << "default E4" << endl;
 			break;
 	}
     return false;

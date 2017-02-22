@@ -15,9 +15,8 @@ class Expr : public Symbole {
 
     public:
         Expr(int valeur):Symbole(EXPR) {this->valeur = valeur;} 
-        int getValeur() {return valeur;}
+        int getValeur();
         virtual ~Expr() {}
-        virtual double eval(const map<string, double> & valeurs) = 0;
 };
 
 

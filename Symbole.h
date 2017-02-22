@@ -12,6 +12,7 @@ class Symbole {
         Symbole(const Symbole &source) {this->ident = source.ident;};
         virtual ~Symbole() {}
         char getValue();
+        virtual int getValeur();
         void print();
         operator int() const { return ident; }
 };
