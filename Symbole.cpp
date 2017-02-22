@@ -19,7 +19,13 @@ char Symbole::getValue() {
 		case(FERMEPAR):
 			return ')';
 		case(NOMBRE):
-			return '0';
+			return 'n';
+		case(EXPR):
+			return 'X';
+		case(EXPRPLUS):
+			return 'A';
+		case(EXPRMULT):
+			return 'B';
 		case(EoF):
 			return 'e';
 		default:

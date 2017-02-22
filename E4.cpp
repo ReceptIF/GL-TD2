@@ -27,7 +27,8 @@ bool E4::transition(Automate *automate, Symbole *s) {
 			automate->decalage(s, new E7("E7"));
 			break;
 		default:
-			cout << "default" << endl;
+			cout << *s << endl;
+			cout << "default E4" << endl;
 			break;
 	}
     return false;

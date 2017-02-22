@@ -18,7 +18,6 @@ class Automate {
   	bool end;
     vector<Symbole *> symbolstack;
     vector<Etat *> statestack;
-   // Lexer *lexer;
   
   public:
     Automate();

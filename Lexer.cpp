@@ -72,7 +72,6 @@ Symbole Lexer::getNext(bool eat) {
   if(eat && currentChar!='\0') {
     previousChaine = chaine;
     chaine = chaine.substr(index);
-    cout << "Chaine : " << chaine << endl;
   }
   else if(index == chaine.size()) {
     chaine = "";

@@ -14,12 +14,10 @@
 using namespace std;
 
 class Nombre : public Expr {
-    protected:
-      int valeur;
   
     public:
     	int getValeur(){ return valeur; }
-        Nombre(int valeur);
+        Nombre(int valeur):Expr(valeur) {this->ident = NOMBRE; this-> valeur = valeur;}
         ~Nombre() {}
         double eval(const map<string, double> & valeurs);
 };
