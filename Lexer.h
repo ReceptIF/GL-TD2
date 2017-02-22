@@ -19,13 +19,11 @@ using namespace std;
 class Lexer {
   protected:
     string chaine;
-
   public:
     Lexer();
     Lexer(string chaine);
     void putSymbol(Symbole * s);
     Symbole *getNext(bool eat = false);
-
 };
 
 

@@ -7,7 +7,7 @@
 #include <stdlib.h>
 
 Lexer::Lexer() {
-  chaine = "8+6*1";
+  chaine = "";
 }
 
 Lexer::Lexer(string chaine) {
@@ -15,7 +15,6 @@ Lexer::Lexer(string chaine) {
 }
 
 void Lexer::putSymbol(Symbole *s) {
-  
   switch(*s) {
     case PLUS:
       chaine = '+' + chaine;
@@ -30,7 +29,6 @@ void Lexer::putSymbol(Symbole *s) {
       chaine = '(' + chaine;
       break;
   }
-  
 }
 
 Symbole *Lexer::getNext(bool eat) {
@@ -64,20 +62,14 @@ Symbole *Lexer::getNext(bool eat) {
       nbCharLus++;
     }
     else if(currentChar >= 48 && currentChar <= 58)
-    {
-      //cout << "Read a number" << endl;
-      //cout << "char " << currentChar << endl;
-      
+    {   
       string number(1,currentChar);
-      //cout << "number " << number << endl;
       
       nbCharLus++;
       
       while(chaine[nbCharLus] >= 48 && chaine[nbCharLus] <= 58)
       {
-        //cout << "char" << chaine[nbCharLus] << endl;
         number += chaine[nbCharLus];
-        //cout << "nombre" << number << endl;
         nbCharLus++;
       }
       
@@ -96,7 +88,6 @@ Symbole *Lexer::getNext(bool eat) {
   if(eat) {
     chaine = chaine.substr(nbCharLus);
   }
-  
-  //cout << symbole->avoirJeton() << endl;
+
   return symbole;
 }

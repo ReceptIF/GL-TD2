@@ -47,35 +47,37 @@ void Automate::reduction(int n, Symbole * s) {
   
   reverse(poped.begin(), poped.end());
   int val = calcul(poped);
-  //cout << "Evaluation de la réduction : " << val << endl;
-  
+
   statestack.back()->transition(this, new Expr(val));
   lexer->putSymbol(s);
 }
 
-int Automate::calcul(vector<Symbole *> tab) {
-  
+int Automate::calcul(vector<Symbole *> &tab) {
+  int returnValue = 0;
   switch(tab.size()) {
     case 1:
-      return tab[0]->eval();
+      returnValue = tab[0]->eval();
       break;
     case 3:
       if(tab[0]->avoirJeton() == OUVREPAR) {
-        return tab[1]->eval();
+        returnValue = tab[1]->eval();
       }
       else if(tab[1]-> avoirJeton() == PLUS) 
       {
-        return tab[0]->eval() + tab[2]->eval();
+        returnValue = tab[0]->eval() + tab[2]->eval();
       }
       else if(tab[1]-> avoirJeton() == MULT) 
       {
-        return tab[0]->eval() * tab[2]->eval();
+        returnValue = tab[0]->eval() * tab[2]->eval();
       }
       break;
   }
+  int i;
+  for(i=0;i<tab.size();++i) {
+    delete tab[i];
+  }
   
-  return 0;
-  
+  return returnValue;
 }
 
 Automate::~Automate() {
