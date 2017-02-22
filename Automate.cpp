@@ -15,12 +15,11 @@ void Automate::lecture() {
 	Etat *e = new E0("E0");
 	statestack.push_back(e);
 	int i = 0;
-    Lexer lexer("1+2*3+4$");
-    Symbole s(0);
-    do {
-	    s = lexer.getNext(this->eat);
+    Lexer lexer("1+2*3$");
+    do {	    
+    	Symbole * s = lexer.getNext(this->eat);
 	    this->eat = true;
-	    e->transition(this,&s);
+	    e->transition(this,s);
 	    //cout << statestack.back()->getName()<<endl;
 	    e = statestack.back();
 	    i++;
@@ -28,7 +27,7 @@ void Automate::lecture() {
 	  	for(int i=0; i<symbolstack.size(); i++) {
 	  		cout << *symbolstack[i] << endl;
 	  	}
-    } while(i<30 && !(s==EoF && e->getName().compare("E1") == 0));
+    } while(i<18);
 }
 
 void Automate::decalage(Symbole * s, Etat * e) {
@@ -37,10 +36,12 @@ void Automate::decalage(Symbole * s, Etat * e) {
 }
 
 void Automate::reduction(int n, Symbole * s) {
+	vector<Symbole *> toCalculate;
+
   	for(int i=0;i<n;i++) {
    	 	delete(statestack.back());
     	statestack.pop_back();
-   	 	cout << *symbolstack.back() << endl;
+   	 	toCalculate.push_back(symbolstack.back());
     	symbolstack.pop_back();
   	}
   	Etat* e = statestack.back();

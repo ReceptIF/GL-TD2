@@ -16,7 +16,7 @@ string Lexer::getChaine() {
   return this->chaine;
 }
 
-Symbole Lexer::getNext(bool eat) {
+Symbole* Lexer::getNext(bool eat) {
   if(!eat) {
     // Get back to previous state
     chaine = previousChaine;
@@ -77,5 +77,5 @@ Symbole Lexer::getNext(bool eat) {
     chaine = "";
   }
 
-  return *symbole;
+  return symbole;
 }
