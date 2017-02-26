@@ -14,6 +14,7 @@ public :
     vector<Etat *> statestack;
     Lexer *lexer;
     bool accepted;
+    bool error;
 
     Automate(string chaine);
 
@@ -24,7 +25,7 @@ public :
     void reduction(int n, Symbole *s);
 
     void lecture();
-
+private:
     void printSymbolStack();
 
     void printStateStack();

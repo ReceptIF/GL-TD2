@@ -18,6 +18,8 @@ bool E9::transition(Automate &automate, Symbole *s) {
     int val;
     switch (*s) {
         case NOMBRE :
+            automate.error = true;
+            break;
         case PLUS :
             delete (automate.symbolstack.back());
             automate.symbolstack.pop_back();
@@ -39,6 +41,8 @@ bool E9::transition(Automate &automate, Symbole *s) {
             automate.reduction(3, new Expr(val));
             break;
         case OUVREPAR :
+            automate.error = true;
+            break;
         case FERMEPAR :
             delete (automate.symbolstack.back());
             automate.symbolstack.pop_back();
@@ -50,6 +54,8 @@ bool E9::transition(Automate &automate, Symbole *s) {
             automate.reduction(3, new Expr(val));
             break;
         case EXPR :
+            automate.error = true;
+            break;
         case ENDOFFILE :
             delete (automate.symbolstack.back());
             automate.symbolstack.pop_back();

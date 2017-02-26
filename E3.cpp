@@ -18,6 +18,8 @@ bool E3::transition(Automate &automate, Symbole *s) {
     int val;
     switch (*s) {
         case NOMBRE :
+            automate.error = true;
+            break;
         case PLUS :
             val = automate.symbolstack.back()->eval();
             delete (automate.symbolstack.back());
@@ -31,6 +33,8 @@ bool E3::transition(Automate &automate, Symbole *s) {
             automate.reduction(1, new Expr(val));
             break;
         case OUVREPAR :
+            automate.error = true;
+            break;
         case FERMEPAR :
             val = automate.symbolstack.back()->eval();
             delete (automate.symbolstack.back());
@@ -38,6 +42,8 @@ bool E3::transition(Automate &automate, Symbole *s) {
             automate.reduction(1, new Expr(val));
             break;
         case EXPR :
+            automate.error = true;
+            break;
         case ENDOFFILE :
             val = automate.symbolstack.back()->eval();
             delete (automate.symbolstack.back());

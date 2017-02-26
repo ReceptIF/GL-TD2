@@ -20,6 +20,8 @@ bool E7::transition(Automate &automate, Symbole *s) {
     int valG;
     switch (*s) {
         case NOMBRE :
+            automate.error = true;
+            break;
         case PLUS :
             valD = automate.symbolstack.back()->eval();
             delete(automate.symbolstack.back());
@@ -35,6 +37,8 @@ bool E7::transition(Automate &automate, Symbole *s) {
             automate.decalage(s, new E5("E5"));
             break;
         case OUVREPAR :
+            automate.error = true;
+            break;
         case FERMEPAR :
             valD = automate.symbolstack.back()->eval();
             delete(automate.symbolstack.back());
@@ -47,6 +51,8 @@ bool E7::transition(Automate &automate, Symbole *s) {
             automate.reduction(3, new Expr(valG+valD));
             break;
         case EXPR :
+            automate.error = true;
+            break;
         case ENDOFFILE :
             valD = automate.symbolstack.back()->eval();
             delete(automate.symbolstack.back());

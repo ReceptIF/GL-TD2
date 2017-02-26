@@ -19,6 +19,8 @@ void E6::print() const {
 bool E6::transition(Automate &automate, Symbole *s) {
     switch (*s) {
         case NOMBRE :
+            automate.error = true;
+            break;
         case PLUS :
             automate.decalage(s, new E4("E4"));
             break;
@@ -26,11 +28,17 @@ bool E6::transition(Automate &automate, Symbole *s) {
             automate.decalage(s, new E5("E5"));
             break;
         case OUVREPAR :
+            automate.error = true;
+            break;
         case FERMEPAR :
             automate.decalage(s, new E9("E9"));
             break;
         case EXPR :
+            automate.error = true;
+            break;
         case ENDOFFILE :
+            automate.error = true;
+            break;
         default:
             break;
     }
