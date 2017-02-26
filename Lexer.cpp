@@ -1,7 +1,5 @@
 #include "Lexer.h"
-#include <iostream>
 #include <sstream>
-#include <stdlib.h>
 
 using namespace std;
 

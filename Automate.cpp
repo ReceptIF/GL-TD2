@@ -1,6 +1,5 @@
 #include "Automate.h"
 #include "E0.h"
-#include "Expr.h"
 
 Automate::Automate(string chaine) {
     lexer = new Lexer(chaine);

@@ -16,43 +16,55 @@ void E8::print() const {
 }
 
 bool E8::transition(Automate &automate, Symbole *s) {
-    Symbole * exprD;
-    Symbole * exprG;
+    int valG;
+    int valD;
     switch (*s) {
         case NOMBRE :
         case PLUS :
-            exprD = automate.symbolstack.back();
+            valD = automate.symbolstack.back()->eval();
+            delete(automate.symbolstack.back());
             automate.symbolstack.pop_back();
+            delete(automate.symbolstack.back());
             automate.symbolstack.pop_back();
-            exprG = automate.symbolstack.back();
+            valG = automate.symbolstack.back()->eval();
+            delete(automate.symbolstack.back());
             automate.symbolstack.pop_back();
-            automate.reduction(3, new Expr(exprG->eval()*exprD->eval()));
+            automate.reduction(3, new Expr(valG*valD));
             break;
         case MULT :
-            exprD = automate.symbolstack.back();
+            valD = automate.symbolstack.back()->eval();
+            delete(automate.symbolstack.back());
             automate.symbolstack.pop_back();
+            delete(automate.symbolstack.back());
             automate.symbolstack.pop_back();
-            exprG = automate.symbolstack.back();
+            valG = automate.symbolstack.back()->eval();
+            delete(automate.symbolstack.back());
             automate.symbolstack.pop_back();
-            automate.reduction(3, new Expr(exprG->eval()*exprD->eval()));
+            automate.reduction(3, new Expr(valG*valD));
             break;
         case OUVREPAR :
         case FERMEPAR :
-            exprD = automate.symbolstack.back();
+            valD = automate.symbolstack.back()->eval();
+            delete(automate.symbolstack.back());
             automate.symbolstack.pop_back();
+            delete(automate.symbolstack.back());
             automate.symbolstack.pop_back();
-            exprG = automate.symbolstack.back();
+            valG = automate.symbolstack.back()->eval();
+            delete(automate.symbolstack.back());
             automate.symbolstack.pop_back();
-            automate.reduction(3, new Expr(exprG->eval()*exprD->eval()));
+            automate.reduction(3, new Expr(valG*valD));
             break;
         case EXPR :
         case ENDOFFILE :
-            exprD = automate.symbolstack.back();
+            valD = automate.symbolstack.back()->eval();
+            delete(automate.symbolstack.back());
             automate.symbolstack.pop_back();
+            delete(automate.symbolstack.back());
             automate.symbolstack.pop_back();
-            exprG = automate.symbolstack.back();
+            valG = automate.symbolstack.back()->eval();
+            delete(automate.symbolstack.back());
             automate.symbolstack.pop_back();
-            automate.reduction(3, new Expr(exprG->eval()*exprD->eval()));
+            automate.reduction(3, new Expr(valG*valD));
             break;
         default:
             break;

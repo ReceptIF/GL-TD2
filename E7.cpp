@@ -16,41 +16,47 @@ void E7::print() const {
 }
 
 bool E7::transition(Automate &automate, Symbole *s) {
-    Symbole * exprD;
-    Symbole * exprG;
+    int valD;
+    int valG;
     switch (*s) {
         case NOMBRE :
         case PLUS :
-            exprD = automate.symbolstack.back();
+            valD = automate.symbolstack.back()->eval();
+            delete(automate.symbolstack.back());
             automate.symbolstack.pop_back();
+            delete(automate.symbolstack.back());
             automate.symbolstack.pop_back();
-            exprG = automate.symbolstack.back();
+            valG = automate.symbolstack.back()->eval();
+            delete(automate.symbolstack.back());
             automate.symbolstack.pop_back();
-            cout << exprG->eval() << "+" << exprD->eval() << endl;
-            automate.reduction(3, new Expr(exprG->eval()+exprD->eval()));
+            automate.reduction(3, new Expr(valG+valD));
             break;
         case MULT :
             automate.decalage(s, new E5("E5"));
             break;
         case OUVREPAR :
         case FERMEPAR :
-            exprD = automate.symbolstack.back();
+            valD = automate.symbolstack.back()->eval();
+            delete(automate.symbolstack.back());
             automate.symbolstack.pop_back();
+            delete(automate.symbolstack.back());
             automate.symbolstack.pop_back();
-            exprG = automate.symbolstack.back();
+            valG = automate.symbolstack.back()->eval();
+            delete(automate.symbolstack.back());
             automate.symbolstack.pop_back();
-            cout << exprG->eval() << "+" << exprD->eval() << endl;
-            automate.reduction(3, new Expr(exprG->eval()+exprD->eval()));
+            automate.reduction(3, new Expr(valG+valD));
             break;
         case EXPR :
         case ENDOFFILE :
-            exprD = automate.symbolstack.back();
+            valD = automate.symbolstack.back()->eval();
+            delete(automate.symbolstack.back());
             automate.symbolstack.pop_back();
+            delete(automate.symbolstack.back());
             automate.symbolstack.pop_back();
-            exprG = automate.symbolstack.back();
+            valG = automate.symbolstack.back()->eval();
+            delete(automate.symbolstack.back());
             automate.symbolstack.pop_back();
-            cout << exprG->eval() << "+" << exprD->eval() << endl;
-            automate.reduction(3, new Expr(exprG->eval()+exprD->eval()));
+            automate.reduction(3, new Expr(valG+valD));
             break;
         default:
             break;
