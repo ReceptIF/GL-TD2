@@ -16,22 +16,12 @@ void E7::print() const {
 }
 
 bool E7::transition(Automate &automate, Symbole *s) {
-    int valD;
-    int valG;
     switch (*s) {
         case NOMBRE :
             automate.error = true;
             break;
         case PLUS :
-            valD = automate.symbolstack.back()->eval();
-            delete(automate.symbolstack.back());
-            automate.symbolstack.pop_back();
-            delete(automate.symbolstack.back());
-            automate.symbolstack.pop_back();
-            valG = automate.symbolstack.back()->eval();
-            delete(automate.symbolstack.back());
-            automate.symbolstack.pop_back();
-            automate.reduction(3, new Expr(valG+valD));
+            reductionR2(automate);
             break;
         case MULT :
             automate.decalage(s, new E5("E5"));
@@ -40,32 +30,28 @@ bool E7::transition(Automate &automate, Symbole *s) {
             automate.error = true;
             break;
         case FERMEPAR :
-            valD = automate.symbolstack.back()->eval();
-            delete(automate.symbolstack.back());
-            automate.symbolstack.pop_back();
-            delete(automate.symbolstack.back());
-            automate.symbolstack.pop_back();
-            valG = automate.symbolstack.back()->eval();
-            delete(automate.symbolstack.back());
-            automate.symbolstack.pop_back();
-            automate.reduction(3, new Expr(valG+valD));
+            reductionR2(automate);
             break;
         case EXPR :
             automate.error = true;
             break;
         case ENDOFFILE :
-            valD = automate.symbolstack.back()->eval();
-            delete(automate.symbolstack.back());
-            automate.symbolstack.pop_back();
-            delete(automate.symbolstack.back());
-            automate.symbolstack.pop_back();
-            valG = automate.symbolstack.back()->eval();
-            delete(automate.symbolstack.back());
-            automate.symbolstack.pop_back();
-            automate.reduction(3, new Expr(valG+valD));
+            reductionR2(automate);
             break;
         default:
             break;
     }
     return false;
+}
+
+void E7::reductionR2(Automate & automate){
+    int valD = automate.symbolstack.back()->eval();
+    delete(automate.symbolstack.back());
+    automate.symbolstack.pop_back();
+    delete(automate.symbolstack.back());
+    automate.symbolstack.pop_back();
+    int valG = automate.symbolstack.back()->eval();
+    delete(automate.symbolstack.back());
+    automate.symbolstack.pop_back();
+    automate.reduction(3, new Expr(valG+valD));
 }

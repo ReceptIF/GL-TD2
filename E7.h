@@ -13,6 +13,8 @@ public:
     virtual void print() const;
 
     virtual bool transition(Automate &automate, Symbole *s);
+private:
+    void reductionR2(Automate &automate);
 };
 
 

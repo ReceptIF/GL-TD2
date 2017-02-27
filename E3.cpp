@@ -15,43 +15,37 @@ void E3::print() const {
 }
 
 bool E3::transition(Automate &automate, Symbole *s) {
-    int val;
     switch (*s) {
         case NOMBRE :
             automate.error = true;
             break;
         case PLUS :
-            val = automate.symbolstack.back()->eval();
-            delete (automate.symbolstack.back());
-            automate.symbolstack.pop_back();
-            automate.reduction(1, new Expr(val));
+            reductionR5(automate);
             break;
         case MULT :
-            val = automate.symbolstack.back()->eval();
-            delete (automate.symbolstack.back());
-            automate.symbolstack.pop_back();
-            automate.reduction(1, new Expr(val));
+            reductionR5(automate);
             break;
         case OUVREPAR :
             automate.error = true;
             break;
         case FERMEPAR :
-            val = automate.symbolstack.back()->eval();
-            delete (automate.symbolstack.back());
-            automate.symbolstack.pop_back();
-            automate.reduction(1, new Expr(val));
+            reductionR5(automate);
             break;
         case EXPR :
             automate.error = true;
             break;
         case ENDOFFILE :
-            val = automate.symbolstack.back()->eval();
-            delete (automate.symbolstack.back());
-            automate.symbolstack.pop_back();
-            automate.reduction(1, new Expr(val));
+            reductionR5(automate);
             break;
         default:
             break;
     }
     return false;
+}
+
+void E3::reductionR5(Automate & automate){
+    int val = automate.symbolstack.back()->eval();
+    delete (automate.symbolstack.back());
+    automate.symbolstack.pop_back();
+    automate.reduction(1, new Expr(val));
 }
